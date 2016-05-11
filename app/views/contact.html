@@ -1,0 +1,55 @@
+<p>Para encargos a medida o cualquier otra consulta rellena el siguiente formulario:	</p>
+<div ng-controller="ContactCtrl">
+	<form name="userForm" novalidate>
+		<label for="name">Nombre *</label><br />
+		<input name="name" type="text" ng-model="user.name" ng-model-options="{ updateOn: 'blur' }" required />
+		<span class="messages" ng-show="userForm.$submitted || userForm.name.$touched">
+			<span ng-show="userForm.name.$error.required">Este campo es obligatorio</span>
+		</span>
+		<br />
+		<label for="phone">Teléfono</label><br />
+		<input name="phone" type="text" ng-model="user.phone" ng-model-options="{ updateOn: 'blur' }" ng-pattern="patterns.phone"/>
+		<span ng-show="userForm.name.$error.required">Este campo es obligatorio</span>
+
+<!--       <span class="messages" ng-show="userForm.$submitted || userForm.name.$touched">
+</span> -->
+<br />
+<label for="email">Email *</label><br />
+<input name="email" type="email" ng-model="user.email" ng-model-options="{ updateOn: 'blur' }" required />
+<span class="messages" ng-show="userForm.$submitted || userForm.email.$touched">
+	<span ng-show="userForm.email.$error.required">Este campo es obligatorio</span>
+	<span ng-show="userForm.email.$error.email">Formato de email incorrecto.</span>
+</span>
+<br />
+<label for="message">Mensaje *</label><br />
+<textarea name="message" ng-model="user.message" required ng-minlength="10"></textarea>
+
+<br /><br />
+<input type="reset" ng-click="reset(userForm)" value="Limpiar" />
+<input type="submit" ng-click="update()" value="Enviar" ng-disabled="userForm.$invalid" />
+</form>
+<br />
+<p>Los campos marcados con * son obligatorios.</p>
+<!--     <pre>user = {{user | json}}</pre>
+-->  </div>
+
+<script>
+	angular.module('formLabs', [])
+	.controller('UserCtrl', ['$scope', function($scope) {
+		$scope.user = {};
+
+		$scope.update = function() {
+			console.log($scope.user);
+		};
+
+		$scope.reset = function(form) {
+			$scope.user = {};
+			if (form) {
+				form.$setPristine();
+				form.$setUntouched();
+			}
+		};
+
+		$scope.reset();
+	}]);
+</script>
