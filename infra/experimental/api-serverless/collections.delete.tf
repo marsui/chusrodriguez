@@ -1,6 +1,6 @@
 resource "aws_api_gateway_method" "collections-delete" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "GET"
   authorization = "NONE"
 }
@@ -8,7 +8,7 @@ resource "aws_api_gateway_method" "collections-delete" {
 // LAMBDA INTEGRATION
 resource "aws_api_gateway_integration" "collections-delete-lambda" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   type = "AWS"
   uri = "${aws_lambda_function.lambda-api.arn}"
@@ -17,7 +17,7 @@ resource "aws_api_gateway_integration" "collections-delete-lambda" {
 // OK
 resource "aws_api_gateway_method_response" "delete-ok" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   status_code = "209"
 }
@@ -25,7 +25,7 @@ resource "aws_api_gateway_method_response" "delete-ok" {
 // Integration OK
 resource "aws_api_gateway_integration_response" "delete-ok-integration" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   status_code = "${aws_api_gateway_method_response.delete-ok.status_code}"
 }
@@ -33,7 +33,7 @@ resource "aws_api_gateway_integration_response" "delete-ok-integration" {
 // Bad request
 resource "aws_api_gateway_method_response" "delete-bad-request" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   status_code = "400"
 }
@@ -41,7 +41,7 @@ resource "aws_api_gateway_method_response" "delete-bad-request" {
 // Bad request integration
 resource "aws_api_gateway_integration_response" "delete-bad-request-integration" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   status_code = "${aws_api_gateway_method_response.delete-bad-request.status_code}"
 }
@@ -49,7 +49,7 @@ resource "aws_api_gateway_integration_response" "delete-bad-request-integration"
 // Not found
 resource "aws_api_gateway_method_response" "delete-not-found" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   status_code = "404"
 }
@@ -57,7 +57,7 @@ resource "aws_api_gateway_method_response" "delete-not-found" {
 // Not found integration
 resource "aws_api_gateway_integration_response" "delete-not-found-integration" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   status_code = "${aws_api_gateway_method_response.delete-not-found.status_code}"
 }
@@ -65,7 +65,7 @@ resource "aws_api_gateway_integration_response" "delete-not-found-integration" {
 // Technical error
 resource "aws_api_gateway_method_response" "delete-unavailable" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   status_code = "503"
 }
@@ -73,7 +73,7 @@ resource "aws_api_gateway_method_response" "delete-unavailable" {
 // Technical error integration
 resource "aws_api_gateway_integration_response" "delete-unavailable-integration" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-delete.http_method}"
   status_code = "${aws_api_gateway_method_response.delete-unavailable.status_code}"
 }

@@ -1,21 +1,6 @@
-// Global resource
-resource "aws_api_gateway_resource" "collections" {
-  rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  parent_id = "${aws_api_gateway_resource.root-resource-public.id}"
-  path_part = "${var.collections_path_part}"
-}
-
-// Local resource
-resource "aws_api_gateway_resource" "collections-one" {
-  rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  parent_id = "${aws_api_gateway_resource.collections.id}"
-  path_part = "${var.collections_path_part}"
-}
-
-
 resource "aws_api_gateway_method" "collections-get" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "GET"
   authorization = "NONE"
 }
@@ -23,7 +8,7 @@ resource "aws_api_gateway_method" "collections-get" {
 // LAMBDA INTEGRATION
 resource "aws_api_gateway_integration" "collections-get-lambda" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-get.http_method}"
   type = "AWS"
   uri = "${aws_lambda_function.lambda-api.arn}"
@@ -34,7 +19,7 @@ resource "aws_api_gateway_integration" "collections-get-lambda" {
 // OK
 resource "aws_api_gateway_method_response" "get-ok" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-get.http_method}"
   status_code = "200"
 }
@@ -42,7 +27,7 @@ resource "aws_api_gateway_method_response" "get-ok" {
 // Integration OK
 resource "aws_api_gateway_integration_response" "get-ok-integration" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-get.http_method}"
   status_code = "${aws_api_gateway_method_response.get-ok.status_code}"
 }
@@ -50,7 +35,7 @@ resource "aws_api_gateway_integration_response" "get-ok-integration" {
 // Bad request
 resource "aws_api_gateway_method_response" "get-bad-request" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-get.http_method}"
   status_code = "400"
 }
@@ -58,7 +43,7 @@ resource "aws_api_gateway_method_response" "get-bad-request" {
 // Bad request integration
 resource "aws_api_gateway_integration_response" "get-bad-request-integration" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-get.http_method}"
   status_code = "${aws_api_gateway_method_response.get-bad-request.status_code}"
 }
@@ -74,7 +59,7 @@ resource "aws_api_gateway_method_response" "get-not-found" {
 // Not found integration
 resource "aws_api_gateway_integration_response" "get-not-found-integration" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-get.http_method}"
   status_code = "${aws_api_gateway_method_response.get-not-found.status_code}"
 }
@@ -82,7 +67,7 @@ resource "aws_api_gateway_integration_response" "get-not-found-integration" {
 // Technical error
 resource "aws_api_gateway_method_response" "get-unavailable" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-get.http_method}"
   status_code = "503"
 }
@@ -90,7 +75,7 @@ resource "aws_api_gateway_method_response" "get-unavailable" {
 // Technical error integration
 resource "aws_api_gateway_integration_response" "get-unavailable-integration" {
   rest_api_id = "${aws_api_gateway_rest_api.chusrodriguez-api.id}"
-  resource_id = "${aws_api_gateway_resource.collections.id}"
+  resource_id = "${aws_api_gateway_resource.collections-one.id}"
   http_method = "${aws_api_gateway_method.collections-get.http_method}"
   status_code = "${aws_api_gateway_method_response.get-unavailable.status_code}"
 }
