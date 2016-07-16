@@ -1,0 +1,9 @@
+<div class="admin-pane">
+	<h2 class="title">Administración</h2>
+	<div class="row">
+		<div class="col-md-3" ng-repeat="item in adminController.items" ng-click="adminController.operations.openEntitySearch(item)">
+			{{item.label}}
+		</div>
+	</div>
+	
+</div>

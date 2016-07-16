@@ -1,37 +1,43 @@
-<p>Para encargos a medida o cualquier otra consulta rellena el siguiente formulario:	</p>
-<div ng-controller="ContactCtrl">
+<h2>Formulario de contacto:</h2>
+<div class="details-back">
+	<button ng-click="$root.back()"class="btn btn-link">
+		<i class="glyphicon glyphicon-chevron-left"></i>
+			Volver
+	</button>
+</div>
+
+<div class="wrapper-contact">
+	<p>Para encargos a medida o cualquier otra consulta rellena el siguiente formulario:	</p>
 	<form name="userForm" novalidate>
 		<label for="name">Nombre *</label><br />
-		<input name="name" type="text" ng-model="user.name" ng-model-options="{ updateOn: 'blur' }" required />
+		<input name="name" type="text" ng-model="contact.user.name" ng-model-options="{ updateOn: 'blur' }" required />
 		<span class="messages" ng-show="userForm.$submitted || userForm.name.$touched">
 			<span ng-show="userForm.name.$error.required">Este campo es obligatorio</span>
 		</span>
 		<br />
 		<label for="phone">Teléfono</label><br />
-		<input name="phone" type="text" ng-model="user.phone" ng-model-options="{ updateOn: 'blur' }" ng-pattern="patterns.phone"/>
-		<span ng-show="userForm.name.$error.required">Este campo es obligatorio</span>
+		<input name="phone" type="text" ng-model="contact.user.phone" ng-model-options="{ updateOn: 'blur' }" ng-pattern="contact.patterns.phone"/>
 
-<!--       <span class="messages" ng-show="userForm.$submitted || userForm.name.$touched">
-</span> -->
-<br />
-<label for="email">Email *</label><br />
-<input name="email" type="email" ng-model="user.email" ng-model-options="{ updateOn: 'blur' }" required />
-<span class="messages" ng-show="userForm.$submitted || userForm.email.$touched">
-	<span ng-show="userForm.email.$error.required">Este campo es obligatorio</span>
-	<span ng-show="userForm.email.$error.email">Formato de email incorrecto.</span>
-</span>
-<br />
-<label for="message">Mensaje *</label><br />
-<textarea name="message" ng-model="user.message" required ng-minlength="10"></textarea>
+		<br />
+		<label for="email">Email *</label><br />
+		<input name="email" type="email" ng-model="contact.user.email" ng-model-options="{ updateOn: 'blur' }" required />
+		<span class="messages" ng-show="userForm.$submitted || userForm.email.$touched">
+			<span ng-show="userForm.email.$error.required">Este campo es obligatorio</span>
+			<span ng-show="userForm.email.$error.email">Formato de email incorrecto.</span>
+		</span>
+		<br />
+		<label for="text">Mensaje *</label><br />
+		<textarea name="text" ng-model="contact.user.text" required ng-minlength="10"></textarea>
 
-<br /><br />
-<input type="reset" ng-click="reset(userForm)" value="Limpiar" />
-<input type="submit" ng-click="update()" value="Enviar" ng-disabled="userForm.$invalid" />
-</form>
-<br />
-<p>Los campos marcados con * son obligatorios.</p>
-<!--     <pre>user = {{user | json}}</pre>
--->  </div>
+		<br /><br />
+		<input type="reset" ng-click="reset(userForm)" value="Limpiar" />
+		<input type="submit" ng-click="contact.contact()" value="Enviar" ng-disabled="userForm.$invalid" />
+	</form>
+	<br />
+	<p>Los campos marcados con * son obligatorios.</p>
+
+</div>
+
 
 <script>
 	angular.module('formLabs', [])

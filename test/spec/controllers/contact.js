@@ -13,6 +13,11 @@ describe('The contact controller', function () {
     scope = $rootScope.$new();
     ContactCtrl = $controller('ContactCtrl', {
       $scope: scope
+      $http: {
+        post:function(){
+          return 'hola';
+          }
+      }
       // place here mocked dependencies
     });
   }));
@@ -32,7 +37,15 @@ describe('The contact controller', function () {
     });
 
     it('that contain a phone parameter', function () {
-      expect(typeof(ContactCtrl.user.name)).toBe('string');
+      expect(typeof(ContactCtrl.user.phone)).toBe('string');
+    });
+
+    it('that contain an email parameter', function () {
+      expect(typeof(ContactCtrl.user.email)).toBe('string');
+    });
+
+    it('that contain an message parameter', function () {
+      expect(typeof(ContactCtrl.user.message)).toBe('string');
     });
 
   })
@@ -44,4 +57,13 @@ describe('The contact controller', function () {
   it('should return wrong if validating an incorrect phone number', function () {
     expect("abfghleiurd".match(ContactCtrl.patterns.phone)).toBe(null);
   });
+
+  describe('for sending', function() {
+    it('should send the data', function(){
+      expect(ContactCtrl.contact()).toBe('hola');
+
+    });
+
+  })
+
 });

@@ -4,39 +4,57 @@ body {
 	background-repeat: repeat;
 	color: #5f4c0f;
 	background-attachment: fixed;
+	width: 100%;
+	height: 100%;	
+}
+
+body .super-wrapper{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	bottom: 30px;
+	padding-bottom: 1em;	
+	overflow: auto;
+}
+
+body .wrapper-footer{
+	position: fixed;
+	bottom: -1px;
+	width: 100%;
+	height: 30px;
+	background: url('/images/footer.png') left center repeat;
 }
 
 .wrapper-header{
 	padding: 2em 0em;
 	background-image: url('/images/logo2.png');
-	/*width: 900px;*/
 	max-width: 100%;
 	margin: auto;
-	/*background-color: white;*/
 	box-shadow: 0px 0px 20px #5f4c0f;
 }
 
 .wrapper-header .logo{
 	color: #3e3209;
-	/*height: 40%;*/
-	/*display: block;*/
-	/*margin: 20%;*/
 }
 
 .wrapper {
-	width: 900px;
-	max-width: 100%;
+	width: 100%;
 	margin: auto;
-	padding: 1em 2em;
-	/*background-color: white;*/
-	/*box-shadow: 0px 0px 20px #5f4c0f;*/
 }
 
 .wrapper-footer{
 	background: url('/images/footer.png') repeat-x;
 	box-shadow: 0px 0px 20px #5f4c0f;
+}
 
-	/*height: 10px;*/
+.wrapper-contact{
+	margin:auto;
+	width: 600px;
+	color: #534741;
+	/*font-family: heart;
+	font-size: 1.8em;*/
+
 }
 
 header {
@@ -44,36 +62,189 @@ header {
 }
 
 .article .image{
-	/*float: center;*/
 	max-width: 400px;
 	margin: 0 1em 0 0;
 	text-align: center;
 }
 
 h1{
-	color: #a08018;
+	/*color: #a08018;*/
+	color: #534741;
 	font-family: heart;
 	font-size: 3.5em;
 }
 
-.left-menu .image{
-	float: right;
-	max-width: 15em;
-	margin: 2em 0em 0 0;
+.big-menu .image{
+	margin-top: 10px;
+	max-width: 180px;
 }
 
-.right-menu .image{
-	float: left;
-	max-width: 15em;
-	margin: 2em 0em 0 0;
+.big-menu {
+	text-align: center;
 }
 
 @font-face {
-       font-family: 'heart';
-       src: url('/fonts/heart.ttf');
+	font-family: 'heart';
+	src: url('/fonts/heart.ttf');
 }
 
 .photo {
 	margin:1em;
 	display: inline-block;
 }
+
+
+.mini-menu body {
+	background-color: #FCF5E5;
+	background-image: url('/images/bg.png');
+	background-repeat: repeat;
+	color: #5f4c0f;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;	
+}
+
+.mini-menu body .super-wrapper{
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	bottom: 30px;
+	padding-bottom: 1em;	
+	overflow: auto;
+}
+
+.mini-menu body .wrapper-footer{
+	position: fixed;
+	bottom: -1px;
+	width: 100%;
+	height: 30px;
+	background: url('/images/footer.png') left center repeat;
+}
+
+.mini-menu .wrapper-header{
+	max-width: 100%;
+	margin: auto;
+	box-shadow: 0px 0px 20px #5f4c0f;
+	height: 78px;
+	background: url('/images/little_menu.png') left center repeat;
+	padding: 0;
+}
+
+.mini-menu .wrapper-header .logo{
+	color: #3e3209;
+	height: 78px;
+}
+
+.mini-menu .wrapper-header .little_logo{
+	color: #3e3209;
+	height: 70px;
+	float: left;
+	margin: 5px 5px 0 5px;
+}
+
+.mini-menu .wrapper-header .little_logo .image{
+	height: 40px;
+	float: center;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.mini-menu .wrapper-header .little_logo_social{
+	color: #3e3209;
+	height: 45px;
+	float: right;
+	margin: 5px 5px 0 5px;
+}
+
+.mini-menu .wrapper-header .little_logo_social .image{
+	color: #3e3209;
+	height: 45px;
+	float: right;
+	margin: 5px 5px 0 5px;
+}
+
+.mini-menu .wrapper-header .image{
+	height: 65px;
+	margin-top: 5px;
+}
+
+.mini-menu .wrapper {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+
+}
+
+.mini-menu .wrapper .article {
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+	float: center;
+}
+
+.mini-menu .wrapper-menu .image{
+	height: 30px;
+}
+
+.mini-menu .wrapper-footer{
+	box-shadow: 0px 0px 20px #5f4c0f;
+}
+
+.mini-menu header {
+	text-align: center;
+}
+
+.mini-menu .article .image{
+	max-width: 400px;
+	margin: 0 1em 0 0;
+	text-align: center;
+}
+
+.mini-menu h1{
+	color: #a08018;
+	font-family: heart;
+	font-size: 3.5em;
+}
+
+.mini-menu .big-menu .image{
+	margin-top: 10px;
+	max-width: 180px;
+}
+
+.mini-menu .big-menu {
+	text-align: center;
+}
+
+.mini-menu .photo {
+	margin:1em;
+	display: inline-block;
+}
+
+.collections,
+.collection-detail,
+.accessory {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.collections-item, 
+.collection-detail-item,
+.accessory-list {
+		margin-top: 15px;
+		margin-bottom: 10px;
+}
+
+ h2 {
+ 	margin-top: 25px;
+	color: #534741;
+	font-family: heart;
+	font-size: 3.5em;
+	text-align: center;
+}
+
+ .body {
+ 	color: #534741;
+	/*font-family: heart;*/
+	/*font-size: 1.7em;*/
+
+ }

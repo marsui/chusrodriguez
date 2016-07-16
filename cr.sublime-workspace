@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"repeat",
+				"repeat-x"
+			],
+			[
+				"top",
+				"margin-top"
+			],
+			[
+				"con",
+				"config"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
 				"op",
 				"option	Tag"
 			],
@@ -46,10 +78,6 @@
 			[
 				"marg",
 				"margin-top"
-			],
-			[
-				"margin",
-				"margin-right"
 			],
 			[
 				"font",
@@ -103,6 +131,70 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "test/spec/controllers/contact.js",
+			"settings":
+			{
+				"buffer_size": 1757,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/index.html",
+			"settings":
+			{
+				"buffer_size": 4110,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/main.html",
+			"settings":
+			{
+				"buffer_size": 1343,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/main2.html",
+			"settings":
+			{
+				"buffer_size": 766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "api/index.js",
+			"settings":
+			{
+				"buffer_size": 575,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/controllers/carousel.js",
+			"settings":
+			{
+				"buffer_size": 1272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/styles/main2.css",
+			"settings":
+			{
+				"buffer_size": 1704,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/controllers/collection-list.js",
+			"settings":
+			{
+				"buffer_size": 583,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -111,10 +203,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 87.0,
-		"last_filter": "",
+		"height": 47.0,
+		"last_filter": "ssphp",
 		"selected_items":
 		[
+			[
+				"ssphp",
+				"Set Syntax: PHP"
+			],
 			[
 				"num",
 				"Emmet: Increment Number by 1"
@@ -128,7 +224,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 575.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -149,10 +245,55 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/marsui/workspace/chusrodriguez"
+		"/Users/marsui/workspace/chusrodriguez/app",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/controllers",
+		"/Users/marsui/workspace/chusrodriguez/api"
 	],
 	"file_history":
 	[
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/directives/scroll-watcher.js",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/app.js",
+		"/Users/marsui/workspace/chusrodriguez/app/styles/main2.css",
+		"/Users/marsui/workspace/chusrodriguez/app/views/collection/collection.html",
+		"/Users/marsui/workspace/chusrodriguez/app/styles/main.css",
+		"/Users/marsui/workspace/chusrodriguez/app/views/dress-detail.html",
+		"/Users/marsui/workspace/chusrodriguez/app/resources/images.json",
+		"/Users/marsui/workspace/chusrodriguez/app/resources/gallery.json",
+		"/Users/marsui/workspace/chusrodriguez/app/views/collection-detail.html",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/controllers/dress-detail.js",
+		"/Users/marsui/workspace/chusrodriguez/app/views/contact.html",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/directives/collection.js",
+		"/Users/marsui/workspace/chusrodriguez/api/contact.php",
+		"/Users/marsui/workspace/chusrodriguez/Gruntfile.js",
+		"/Users/marsui/workspace/chusrodriguez/cr.sublime-project",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/services/contact.js",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/controllers/contact.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/controllers/about.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/controllers/auth.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/controllers/collection-list.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/controllers/collection.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/controllers/facebook.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/controllers/gallery.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/controllers/instagram.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/controllers/main.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/directives/collection.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/directives/photo.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/services/api.js",
+		"/Users/marsui/workspace/chusrodriguez/test/spec/services/gallery.js",
+		"/Users/marsui/workspace/chusrodriguez/app/index.html",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/controllers/auth.js",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/directives/photo.js",
+		"/Users/marsui/workspace/chusrodriguez/app/views/photo/photo.html",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/controllers/gallery.js",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/controllers/collection-list.js",
+		"/Users/marsui/workspace/chusrodriguez/app/views/collection-list.html",
+		"/Users/marsui/workspace/chusrodriguez/app/views/gallery.html",
+		"/Library/WebServer/Documents/archivo.php",
+		"/Library/WebServer/Documents/facebook.php",
+		"/Library/WebServer/Documents/phpcurl.php",
+		"/Users/marsui/workspace/chusrodriguez/app/views/main.html",
+		"/Users/marsui/workspace/chusrodriguez/app/scripts/controllers/collection.js",
+		"/Users/marsui/workspace/chusrodriguez/app/views/collection.html",
 		"/Users/marsui/Desktop/index.html",
 		"/Users/marsui/workspace/angular-phonecat/app/phones/phones.json",
 		"/Users/marsui/workspace/angular-phonecat/app/partials/phone-list.html",
@@ -205,7 +346,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -219,6 +360,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$next[0].offsetWidth",
+			"item",
+			"item-active",
+			"Ctrl",
+			"fold",
+			"scope",
+			"image",
+			"3",
+			"2",
+			"logo",
+			"row",
+			"bower_components",
+			"else if ($aurl)\n                {\n                    $this->PHOTOS = urldecode($aurl);\n                    $json = json_decode($this->curlGetFile($this->PHOTOS));\n                    if($json -> error) die(\"THERE HAS BEEN AN ERROR: album url invalid\");\n                    //echo '<a id=\"back\" href=\"javascript:history.go(-1)\">Go Back</a>';\n                    //echo '<a id=\"backAlbums\" href=\"'.$this->PAGE.'\">Back to albums</a>';\n                    echo '<br clear=\"all\" />';\n                    if($json->paging->previous)\n                        echo '<a id=\"prev\" href=\"'.$PAGE.'?aurl='.urlencode($json->paging->previous).'\">Previous</a>';\n                    if($json->paging->next)\n                        echo '<a id=\"next\" href=\"'.$PAGE.'?aurl='.urlencode($json->paging->next).'\">Next</a>';\n                    echo '<br clear=\"all\" />';\n                    foreach($json->data as $v)\n                    {\n                        echo \"<a class='ImageLink' href = '\".$v->source.\"'><img width='110px' src='\".$v->picture.\"' /></a>\";\n                        //echo json_encode($json);\n                    }\n                    return true;\n                }",
+			"//}",
+			"pageId",
 			"row number",
 			"phone",
 			"repe",
@@ -250,14 +406,249 @@
 	"groups":
 	[
 		{
+			"selected": 6,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "test/spec/controllers/contact.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1286,
+								1286
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1089,
+								1098
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 152.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/main.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1343,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								440,
+								440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/main2.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								766,
+								766
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 142.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "api/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/scripts/controllers/carousel.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								417,
+								420
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 36.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/styles/main2.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1173,
+								1173
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/scripts/controllers/collection-list.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 583,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								265,
+								269
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -294,7 +685,7 @@
 	"project": "cr.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -303,6 +694,30 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"contact",
+				"Source/scripts/controllers/contact.js"
+			],
+			[
+				"index",
+				"app/index.html"
+			],
+			[
+				"auth",
+				"app/scripts/controllers/auth.js"
+			],
+			[
+				"inde",
+				"app/index.html"
+			],
+			[
+				"app",
+				"app/scripts/app.js"
+			],
+			[
+				"main",
+				"app/styles/main.css"
+			],
 			[
 				"pho",
 				"app/partials/phone-detail.html"

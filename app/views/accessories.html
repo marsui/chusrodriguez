@@ -1,0 +1,22 @@
+<h2>Complementos</h2>
+<div class="details-back">
+	<button ng-click="$root.back()"class="btn btn-link">
+		<i class="glyphicon glyphicon-chevron-left"></i>
+			Volver
+	</button>
+</div>
+
+<div class="accessory">
+<div class="row">
+  	<div 
+  		class ="accessory-list col-md-4" 
+  		ng-repeat="accessory in accessoryCtrl.accesoryList">
+  			<a ng-href="#/catalog/accessory/{{accessory.id}}">
+  				<img height="410" ng-src="{{accessory.image_url}}">
+  			</a>
+  	</div>
+  </div>
+</div>
+</div>
+
+

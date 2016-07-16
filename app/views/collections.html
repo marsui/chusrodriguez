@@ -1,0 +1,20 @@
+<h2>Colecciones</h2>
+<div class="details-back">
+	<button ng-click="$root.back()"class="btn btn-link">
+		<i class="glyphicon glyphicon-chevron-left"></i>
+			Volver
+	</button>
+</div>
+
+<div class="collections">
+<div class="row">
+  	<div 
+  		class ="collections-item col-md-4" 
+  		ng-repeat="collection in collectionList.collections">
+  			<a ng-href="#/collection-detail/{{collection.id}}"><img height="410" ng-src="{{collection.image_url}}"></a>
+  	</div>
+  </div>
+</div>
+</div>
+
+

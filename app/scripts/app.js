@@ -1,5 +1,4 @@
   'use strict';
-
   /**
    * @ngdoc overview
    * @name chusrodriguezApp
@@ -16,7 +15,10 @@
     'ngSanitize',
     'ngTouch',
     'facebook',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'gilbox.sparkScroll',
+    'konga',
+    'ngFileUpload'
     ])
    .config(function ($routeProvider) {
     $routeProvider
@@ -25,21 +27,31 @@
       controller: 'MainCtrl',
       controllerAs: 'main'
     })
-    .when('/gallery', {
-      templateUrl: 'views/gallery.html',
-      controller: 'GalleryCtrl',
-      controllerAs: 'gallery'
-    })
-    .when('/collection-list', {
-      templateUrl: 'views/collection-list.html',
+    .when('/collections', {
+      templateUrl: 'views/collections.html',
       controller: 'CollectionListCtrl',
       controllerAs: 'collectionList'
+    })
+    .when('/dresses', {
+      templateUrl: 'views/dresses.html', 
+      controller: 'DressListCtrl',
+      controllerAs: 'dressCtrl'
+    })
+    .when('/catalog/:source/:id', {
+      templateUrl: 'views/item-detail.html',
+      controller: 'ItemDetailCtrl', 
+      controllerAs: 'itemDetail'
+    })
+    .when('/accessories', {
+      templateUrl: 'views/accessories.html',
+      controller: 'AccessoriesCtrl',
+      controllerAs: 'accessoryCtrl'
     })
     .when('/facebook', {
       templateUrl: 'views/modal.html',
       controller: 'ModalCtrl',
       controllerAs: 'modal'
-      })
+    })
     .when('/instagram', {
       templateUrl: 'views/modal.html',
       controller: 'ModalCtrl',
@@ -50,13 +62,27 @@
       controller: 'ContactCtrl', 
       controllerAs: 'contact'
     })
+    .when('/collection-detail/:id', {
+      templateUrl: 'views/collection-detail.html',
+      controller: 'CollectionDetailCtrl', 
+      controllerAs: 'collectionDetail'
+    })
+    .when('/admin', {
+      templateUrl: 'views/admin.html',
+      controller: 'AdminCtrl', 
+      controllerAs: 'adminController'
+    })
     .otherwise({
       redirectTo: '/'
     });
   })
-  .config(function(FacebookProvider) {
-    // Set your appId through the setAppId method or
-    // use the shortcut in the initialize method directly.
-    FacebookProvider.init('147456718974280');
-  })
+
+  .run(['konga', 'metadata', function(konga, metadata, Dresses) {
+    konga.config('apiEndpoint', 'http://localhost:3000');
+    konga.viewMapper('IMAGE_FIELD', 'views/admin/konga-image-field.html');
+
+    konga.api('Dress', Dresses)
+    konga.init(metadata);
+  }]);
+   
 

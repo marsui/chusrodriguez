@@ -37,5 +37,14 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.4.6",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "massive": "^2.3.0",
+    "nodemailer": "^2.4.2",
+    "nodemailer-ses-transport": "^1.4.0",
+    "ui.konga": "^1.2.8"
   }
 }

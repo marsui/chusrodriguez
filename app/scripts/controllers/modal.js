@@ -7,10 +7,9 @@
  * # FacebookCtrl
  * Controller of the chusrodriguezApp
  */
-angular.module('chusrodriguezApp')
+angular.module('chusrodriguezApp', ['ngAnimate', 'ui.bootstrap'])
   .controller('ModalCtrl', function ($scope,$window) {
-angular.module('ui.bootstrap.demo', ['ngAnimate', 'ui.bootstrap']);
-angular.module('ui.bootstrap.demo').controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
+// angular.module('ui.bootstrap.demo').controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
 
   $scope.items = ['item1', 'item2', 'item3'];
 
@@ -27,7 +26,7 @@ angular.module('ui.bootstrap.demo').controller('ModalDemoCtrl', function ($scope
 // Please note that $uibModalInstance represents a modal window (instance) dependency.
 // It is not the same as the $uibModal service used above.
 
-angular.module('ui.bootstrap.demo').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('chusrodriguezApp').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
 
   $scope.items = items;
   $scope.selected = {

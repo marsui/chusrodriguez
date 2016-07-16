@@ -1,5 +1,5 @@
   <!doctype html>
-  <html>
+  <html ng-app="chusrodriguezApp" ng-controller="KongaController">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -9,80 +9,125 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+    <link rel="stylesheet" href="bower_components/angular-dialog-service/dialogs.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/konga/lib/konga.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/details.css">
+    <link rel="stylesheet" href="styles/components.css">
+
+
     <!-- endbuild -->
   </head>
-  <body ng-app="chusrodriguezApp" ng-controller="MainCtrl">
-      <!--[if lte IE 8]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+  <body ng-controller="MainCtrl">
 
-        <div class="wrapper-header">
+    <div class="mini-menu" ng-if="route !== '/'">
+      <div class="wrapper-header">
+        <div class="wrapper">
           <header>
-            <img class="logo" src="images/logo3.png"/>
-            <div class="_menu">
+            <a href="#main/"><img class="little_logo" src="images/logo3.png"/></a>
+            <a href="#/collections/"><img class="image" src="images/colecciones_menu.png"></a><a href="#/dresses/"><img class="image" src="images/vestidos_menu.png"></a>
+            <a href="#/accessories/"><img class="image" src="images/complementos_menu.png"></a>
+
+            <div class="little_logo_social">
+                <a href="#/contact">
+                    <img class="image" src="images/contacto_retro.png" ng-click="open()"> 
+                </a>
+                <a target="_blank" href="https://www.instagram.com/taller.chusrodriguez/"><img class="image" src="images/instagram_retro.png" ng-click="open()">
+                </a>  
+                <a target="_blank" href="https://www.facebook.com/taller.chusrodriguez"><img class="image" src="images/facebook_retro.png" ng-click="open()">
+                </a>    
             </div>
           </header>
         </div>
+      </div>
+    </div>
 
-        <div class="wrapper row">
-          <div class="col-md-1">
-            <div class="left-menu">
-              <a href="#/main/"><img class="image" src="images/inicio_menu.png"></a> 
-              <a href="#/gallery/"><img class="image" src="images/vestidos_menu.png"></a>
-              <a href="#/collection-list/"><img class="image" src="images/colecciones_menu.png"></a>
-            </div>
-          </div>
-          <div ng-view class="col-md-10">
-            
-          </div>
-          <div class="col-md-1">
-            <div class="right-menu">
-              <img class="image" src="images/facebook_menu.png" ng-click="open()">     
-              <img class="image" src="images/instagram_menu.png" ng-click="open()">     
-              <a href="#/contact"><img class="image" src="images/contacto_menu.png"></a>
-            </div>
-          </div>
-        </div>          
+    <div ng-view class="super-wrapper"></div>
 
-        <div class="wrapper-footer">
-          <footer>
-            <img class="image" src="images/footer.png">
-            <!-- <p>Hola</p> -->
-          </footer>
-        </div>
+    <div class="wrapper-footer">
+      <footer>
+        <img class="image" src="images/footer.png">
+      </footer>
+    </div>
 
-        <!-- build:js(.) scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="bower_components/angular-touch/angular-touch.js"></script>
-        <script src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
-        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/gallery.js"></script>
-        <script src="scripts/directives/photo.js"></script>
-        <script src="scripts/controllers/collection-list.js"></script>
-        <script src="scripts/services/api.js"></script>
-        <script src="scripts/controllers/auth.js"></script>
-        <script src="scripts/controllers/contact.js"></script>
-        <script src="scripts/controllers/modal.js"></script>
-        <script src="scripts/services/gallery.js"></script>
-        <!-- endbuild -->
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/shifty/dist/shifty.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/rekapi/dist/rekapi.min.js"></script>
+    <script src="bower_components/spark-scroll/src/spark-scroll.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-dialog-service/dialogs.min.js"></script>
+    <script src="bower_components/angular-dialog-service/dialogs-default-translations.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/konga/lib/konga.js"></script>
+    <script src="bower_components/aws-sdk/dist/aws-sdk.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
-      </body>
-      </html>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/gallery.js"></script>
+    <script src="scripts/directives/collection.js"></script>
+    <script src="scripts/directives/photo.js"></script>
+    <script src="scripts/controllers/collections.js"></script>
+    <script src="scripts/services/api.js"></script>
+    <script src="scripts/controllers/auth.js"></script>
+    <script src="scripts/controllers/contact.js"></script>
+    <script src="scripts/controllers/modal.js"></script>
+    <script src="scripts/services/collections.js"></script>
+    <script src="scripts/services/contact.js"></script>
+    <script src="scripts/controllers/collection-detail.js"></script>
+    <script src="scripts/controllers/item-detail.js"></script>
+    <script src="scripts/directives/scroll-watcher.js"></script>
+    <script src="scripts/controllers/carousel.js"></script>
+    <script src="scripts/controllers/accessories.js"></script>
+    <script src="scripts/services/dresses.js"></script>
+    <script src="scripts/services/accessories.js"></script>
+    <script src="scripts/controllers/dresses.js"></script>
+    <script src="scripts/services/photos.js"></script>
+    <script src="scripts/filters/item-name.js"></script>
+    <script src="scripts/services/metadata.js"></script>
+    <script src="scripts/controllers/admin.js"></script>
+    <script src="scripts/directives/file.js"></script>
+    <script src="scripts/services/admin.js"></script>
+    <script src="scripts/directives/image-field.js"></script>
+    <!-- endbuild -->
+
+  </body>
+  </html>

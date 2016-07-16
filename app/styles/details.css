@@ -1,0 +1,92 @@
+.details {
+	position: relative;
+	margin: 2em;
+	padding-left: 150px;
+	
+}
+
+.details-back {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.details-back button {
+	margin-top: 7px;
+	color: #534741;
+	font-family: heart;
+	font-size: 1.6em;
+}
+
+.details-photo-pane {
+	position: relative;
+	float: left;
+	width: 470px;
+	height: 470px;
+	margin-right: 50px;
+}
+
+.details-main-photo {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 348.5px;
+	height: 100%;
+}
+
+.details-main-photo > img {
+	width: 100%;
+	height: 100%; 
+	margin: auto;
+}
+
+.details-side-photos {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 360px;
+	width: 110px;
+	height: 100%;
+	overflow: auto;
+}
+
+.details-side-photo {
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.details-side-photos .details-side-photo:first-child {
+	margin-top: 0px;
+}
+
+.details-side-photo > img {
+	max-width: 100%;
+	max-height: 100%;
+	width: 113.9px;
+	height: 153.3px; 
+	margin: auto;	
+}
+
+.details-side-photo.active {
+	opacity: 0.3;
+}
+
+.details-text-pane {
+	clear: right;
+	margin-left: 440px;
+}
+
+.details-text-pane .details-item-bullets {
+	color: #534741;
+	font-family: heart;
+	font-size: 2em;
+	padding-left: 5em;
+	
+}
+
+.details-actions button {
+	color: #534741;
+	font-family: heart;
+	font-size: 1.6em;
+
+
+}

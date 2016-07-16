@@ -1,0 +1,20 @@
+<h2>Vestidos</h2>
+<div class="details-back">
+	<button ng-click="$root.back()"class="btn btn-link">
+		<i class="glyphicon glyphicon-chevron-left"></i>
+			Volver
+	</button>
+</div>
+
+<div class="collection-detail">
+<div class="row">
+  	<div 
+  		class ="collection-detail-item col-md-3" 
+  		ng-repeat="dress in dressCtrl.dressList">
+  			<a ng-href="#/catalog/dress/{{dress.id}}"><img height="300" ng-src="{{dress.image_url}}"></a>
+  	</div>
+  </div>
+</div>
+</div>
+
+
