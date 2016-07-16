@@ -1,9 +1,12 @@
-sudo: false
 language: node_js
 node_js:
-  - 'iojs'
-  - '0.12'
-  - '0.10'
-before_script:
-  - 'npm install -g bower grunt-cli'
-  - 'bower install'
+  - "4"
+
+services:
+  - docker
+
+script:
+  - "bash scripts/build.sh"
+  - "bash scripts/push.sh"
+  - "bash scripts/provision.sh"
+  - "bash scripts/deploy.sh"
