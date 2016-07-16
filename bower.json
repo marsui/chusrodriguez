@@ -37,6 +37,8 @@
     "bootstrap": "~3.2.0",
     "angular-sanitize": "~1",
     "es5-shim": "~3.1.0",
-    "fullcalendar": "~2.4.0"
+    "fullcalendar": "~2.4.0",
+    "angular-translate": "~2.2.0",
+    "shifty": "1.5.0"
   }
 }
