@@ -1,11 +1,11 @@
 body {
 	background-color: #FCF5E5;
-	background-image: url('/images/bg.png');
+	background-image: url('../images/bg.png');
 	background-repeat: repeat;
 	color: #5f4c0f;
 	background-attachment: fixed;
 	width: 100%;
-	height: 100%;	
+	height: 100%;
 }
 
 body .super-wrapper{
@@ -14,7 +14,7 @@ body .super-wrapper{
 	left: 0px;
 	width: 100%;
 	bottom: 30px;
-	padding-bottom: 1em;	
+	padding-bottom: 1em;
 	overflow: auto;
 }
 
@@ -23,12 +23,12 @@ body .wrapper-footer{
 	bottom: -1px;
 	width: 100%;
 	height: 30px;
-	background: url('/images/footer.png') left center repeat;
+	background: url('../images/footer.png') left center repeat;
 }
 
 .wrapper-header{
 	padding: 2em 0em;
-	background-image: url('/images/logo2.png');
+	background-image: url('../images/logo2.png');
 	max-width: 100%;
 	margin: auto;
 	box-shadow: 0px 0px 20px #5f4c0f;
@@ -44,7 +44,7 @@ body .wrapper-footer{
 }
 
 .wrapper-footer{
-	background: url('/images/footer.png') repeat-x;
+	background: url('../images/footer.png') repeat-x;
 	box-shadow: 0px 0px 20px #5f4c0f;
 }
 
@@ -85,7 +85,7 @@ h1{
 
 @font-face {
 	font-family: 'heart';
-	src: url('/fonts/heart.ttf');
+	src: url('../fonts/heart.ttf');
 }
 
 .photo {
@@ -96,12 +96,12 @@ h1{
 
 .mini-menu body {
 	background-color: #FCF5E5;
-	background-image: url('/images/bg.png');
+	background-image: url('../images/bg.png');
 	background-repeat: repeat;
 	color: #5f4c0f;
 	background-attachment: fixed;
 	width: 100%;
-	height: 100%;	
+	height: 100%;
 }
 
 .mini-menu body .super-wrapper{
@@ -109,7 +109,7 @@ h1{
 	left: 0px;
 	width: 100%;
 	bottom: 30px;
-	padding-bottom: 1em;	
+	padding-bottom: 1em;
 	overflow: auto;
 }
 
@@ -118,7 +118,7 @@ h1{
 	bottom: -1px;
 	width: 100%;
 	height: 30px;
-	background: url('/images/footer.png') left center repeat;
+	background: url('../images/footer.png') left center repeat;
 }
 
 .mini-menu .wrapper-header{
@@ -126,7 +126,7 @@ h1{
 	margin: auto;
 	box-shadow: 0px 0px 20px #5f4c0f;
 	height: 78px;
-	background: url('/images/little_menu.png') left center repeat;
+	background: url('../images/little_menu.png') left center repeat;
 	padding: 0;
 }
 
@@ -227,7 +227,7 @@ h1{
 	margin-bottom: 25px;
 }
 
-.collections-item, 
+.collections-item,
 .collection-detail-item,
 .accessory-list {
 		margin-top: 15px;

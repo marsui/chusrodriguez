@@ -8,7 +8,7 @@
  * Controller of the chusrodriguezApp
  */
 angular.module('chusrodriguezApp')
-  .controller('AdminCtrl', function ($rootScope) {
+  .controller('AdminCtrl', ['$rootScope', function ($rootScope) {
   	this.items = $rootScope.metadata.entities;
   	this.operations = $rootScope.operations;
-  });
+  }]);

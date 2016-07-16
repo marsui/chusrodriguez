@@ -8,8 +8,8 @@
  * Controller of the chusrodriguezApp
  */
 angular.module('chusrodriguezApp')
-  .controller('DressListCtrl', function (Dresses) {
+  .controller('DressListCtrl', ['Dresses', function (Dresses) {
 
   	this.dressList = Dresses.search();
 
-  });
+  }]);

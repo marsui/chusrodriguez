@@ -8,7 +8,7 @@
  * Controller of the chusrodriguezApp
  */
  angular.module('chusrodriguezApp')
- .controller('MainCtrl', function ($scope, $rootScope, $location, common) {
+ .controller('MainCtrl', ['$scope','$rootScope','$location', 'common', function ($scope, $rootScope, $location, common) {
  	var navigation = common.read('navigation-history');
  	if(!navigation) {
  		navigation = [];
@@ -34,4 +34,4 @@
  	});
 
  	$scope.calculateRoute();
- });
+ }]);

@@ -8,7 +8,7 @@
  * Controller of the chusrodriguezApp
  */
 angular.module('chusrodriguezApp')
-  .controller('CollectionDetailCtrl', function (Collections, Dresses, $routeParams) {
+  .controller('CollectionDetailCtrl', ['Collections', 'Dresses', '$routeParams' , function (Collections, Dresses, $routeParams) {
   	var collectionId = $routeParams.id;
   	var query = {
   		collection_id: collectionId
@@ -16,4 +16,4 @@ angular.module('chusrodriguezApp')
 
   	this.dressList = Dresses.search(query);
 
-  });
+  }]);

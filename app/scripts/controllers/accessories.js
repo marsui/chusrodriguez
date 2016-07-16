@@ -8,6 +8,6 @@
  * Controller of the chusrodriguezApp
  */
 angular.module('chusrodriguezApp')
-  .controller('AccessoriesCtrl', function (Accessories) {
+  .controller('AccessoriesCtrl', ['Accessories', function (Accessories) {
     this.accesoryList = Accessories.search();
-  });
+  }]);

@@ -226,7 +226,7 @@ livereload: {
           }
         }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -386,7 +386,7 @@ ngtemplates: {
           '*.{ico,png,txt}',
           '*.html',
         'images/{,*/}*.{webp}',
-      'styles/fonts/{,*/}*.*'
+      'fonts/{,*/}*.*'
       ]
     }, {
       expand: true,
@@ -475,7 +475,6 @@ grunt.registerTask('build', [
   'cdnify',
   'cssmin',
   'uglify',
-  'filerev',
   'usemin',
   'htmlmin'
   ]);

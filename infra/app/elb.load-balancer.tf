@@ -1,6 +1,6 @@
-resource "aws_elb" "bar" {
-  name = "foobar-terraform-elb"
-  availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+resource "aws_elb" "chusrodriguez-elb" {
+  name = "chusrodriguez-elb-${var.environment}"
+  availability_zones = ""
 
   access_logs {
     bucket = "foo"
@@ -31,13 +31,14 @@ resource "aws_elb" "bar" {
     interval = 30
   }
 
-  instances = ["${aws_instance.foo.id}"]
   cross_zone_load_balancing = true
   idle_timeout = 400
   connection_draining = true
   connection_draining_timeout = 400
 
   tags {
-    Name = "foobar-terraform-elb"
+    App = "${var.app-name}"
+    Component = "app"
+    Environment = "${var.environment}"
   }
 }

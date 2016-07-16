@@ -8,6 +8,6 @@
  * Controller of the chusrodriguezApp
  */
 angular.module('chusrodriguezApp')
-  .controller('CollectionListCtrl', function (Collections) {
+  .controller('CollectionListCtrl',['Collections', function (Collections) {
     this.collections = Collections.search();
-  });
+  }]);
