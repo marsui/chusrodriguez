@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "6"
+  - "6.1"
+  - "5.11"
+  - "0.6"
+  - "iojs"
+
+services:
+  - docker
+
+script:
+  - "bash scripts/build.sh"
+  - "bash scripts/push.sh"
+  - "bash scripts/provision.sh"
+  - "bash scripts/deploy.sh"
