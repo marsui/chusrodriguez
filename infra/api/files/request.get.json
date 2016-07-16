@@ -1,0 +1,8 @@
+{
+  "requestParameters" : {
+
+    "integration.request.header.body-header" : "method.request.body",
+    "integration.request.path.pet-name" : "method.request.body.petstore.pets[0].name",
+
+  }
+}

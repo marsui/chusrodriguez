@@ -36,6 +36,9 @@
     "node": ">=0.10.0"
   },
   "scripts": {
+    "start": "source secrets/.profile && node api/index.js",
+    "start-ui": "grunt serve",
+    "start-dev": "npm start && npm start-ui",
     "test": "grunt test"
   },
   "dependencies": {

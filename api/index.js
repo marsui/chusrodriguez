@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser')
 var http = require('http');
 var massive = require("massive");
-var connectionString = process.ENV.CHUSRODRIGUEZ_PGSQL_CONNECTION;
+var connectionString = process.env.CHUSRODRIGUEZ_PGSQL_CONNECTION;
 var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport');
 
