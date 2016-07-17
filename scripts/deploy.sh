@@ -15,4 +15,4 @@ sed -i "s/#aws-access-key#/${secret_key_ses}/g" "$aws_config"
 
 
 gem install dpl
-dpl --provider=elasticbeanstalk --access-key-id="$access_key" --secret-access-key="$secret_key" --app="chusrodriguez-${environment}-application" --env="chusrodriguez-${environment}-environment" --region="${region}"
+dpl --provider=elasticbeanstalk --access-key-id="$access_key" --secret-access-key="$secret_key" --app="chusrodriguez-${environment}-application" --env="chusrodriguez-${environment}-environment" --region="${region}" --bucket-name="chusrodriguez-deployments"
