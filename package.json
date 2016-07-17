@@ -2,6 +2,7 @@
   "name": "chusrodriguez",
   "private": true,
   "devDependencies": {
+    "ui.konga": "^1.2.8",
     "autoprefixer-core": "^5.2.1",
     "bower": "^1.7.9",
     "grunt": "^0.4.5",
@@ -40,8 +41,9 @@
   "scripts": {
     "build": "grunt build",
     "install:bower": "bower install",
-    "start": "source secrets/.profile && node api/index.js",
-    "start-ui": "grunt serve",
+    "start": "npm run start:api & npm run start:ui",
+    "start:api": "node api/index.js",
+    "start:ui": "grunt serve",
     "start-dev": "npm start && npm start-ui",
     "test": "grunt test"
   },
@@ -51,7 +53,6 @@
     "express": "^4.14.0",
     "massive": "^2.3.0",
     "nodemailer": "^2.4.2",
-    "nodemailer-ses-transport": "^1.4.0",
-    "ui.konga": "^1.2.8"
+    "nodemailer-ses-transport": "^1.4.0"
   }
 }
