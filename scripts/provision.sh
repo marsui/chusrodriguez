@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
 
-if [ ! -f vendor/terraform/terraform ]; then
-    bash scripts/common/terraform.sh
-fi
+#if [ ! -f vendor/terraform/terraform ]; then
+#    bash scripts/common/terraform.sh
+#fi
 
-# Verify if database is up
-database_up=1
-if [[ $database_up == 0 ]]
+hosted_zone_id=${HOSTED_ZONE_ID:-none}
+environment=${ENVIRONMENT:-thread}
+region=${AWS_REGION}
+
+# Verify environment existence
+
+db_check=$(node util/rds-check.js)
+if [[ $db_check == 'false' ]]
 then
   bash scripts/components-up/db.sh
 fi
 
-storage_up=1
-if [[ $storage_up == 0 ]]
+app_check=$(node util/beanstalk-check.js)
+if [[ $app_check == 'false' ]]
 then
-  bash scripts/components-up/storage.sh
+  bash scripts/components-up/app.sh
 fi
-
-bash scripts/components-up/app.sh
