@@ -13,13 +13,21 @@ region=${AWS_REGION}
 db_check=$(node util/rds-check.js)
 if [[ $db_check == 'false' ]]
 then
-  bash scripts/components-up/db.sh
+  echo 'starting db deployment'
+  bash scripts/components-up/db.sh > .rds-output.txt
+  echo 'finished db deployment'
+
+  mv $environment.tfstate $environment-db.tfstate
 fi
 
 app_check=$(node util/beanstalk-check.js)
 if [[ $app_check == 'false' ]]
 then
   bash scripts/components-up/app.sh
+
+  mv $environment.tfstate $environment-app.tfstate
 fi
 
 bash scripts/components-up/dns.sh
+
+mv $environment.tfstate $environment-dns.tfstate
