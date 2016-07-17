@@ -8,6 +8,8 @@ pgsql_connection=${CHUSRODRIGUEZ_PGSQL_CONNECTION_STRING:-none}
 access_key_ses=${AWS_ACCESS_KEY_ID_SES:-none}
 secret_key_ses=${AWS_SECRET_ACCESS_KEY_SES:-none}
 
+environment=${ENVIRONMENT:-thread}
+
 aws_config=".ebextensions/.config"
 sed -i "s/#psql-connection-string#/${pgsql_connection}/g" "$aws_config"
 sed -i "s/#aws-access-key#/${access_key_ses}/g" "$aws_config"
