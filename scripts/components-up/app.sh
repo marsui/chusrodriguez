@@ -6,7 +6,7 @@ access_key=${AWS_ACCESS_KEY_ID:-none}
 secret_key=${AWS_SECRET_ACCESS_KEY:-none}
 region=${AWS_REGION:-eu-west-1}
 
-environment=${ENVIRONMENT:-thread}
+environment=${ENVIRONMENT:-thimble}
 
 ./vendor/terraform/terraform get -update=true infra/app
 

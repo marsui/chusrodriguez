@@ -5,7 +5,7 @@ if [ ! -f vendor/terraform/terraform ]; then
 fi
 
 hosted_zone_id=${HOSTED_ZONE_ID:-none}
-environment=${ENVIRONMENT:-thread}
+environment=${ENVIRONMENT:-thimble}
 region=${AWS_REGION}
 
 # Verify environment existence
