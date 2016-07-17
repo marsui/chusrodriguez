@@ -31,5 +31,5 @@ mv .credentials ~/.aws/credentials
 
 sudo pip install awsebcli
 
-eb init -r $region -p Docker
+eb init -r $region -p Docker chusrodriguez-$environment-application
 eb create $environment
