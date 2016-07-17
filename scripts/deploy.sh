@@ -28,3 +28,8 @@ echo "aws_secret_access_key=${secret_key}" >> .credentials
 mkdir -p ~/.aws
 mv .credentials ~/.aws/credentials
 
+
+pip install awsebcli
+
+eb init -r $region -p Docker
+eb create $environment

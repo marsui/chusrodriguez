@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - bash scripts/build.sh
+    - bash scripts/push.sh
+
+test:
+  override:
+    - bash scripts/test.sh
+
+deployment:
+  elasticbeanstalk:
+    branch: master
+    commands:
+      - bash scripts/provision.sh
+      - bash scripts/deploy.sh
