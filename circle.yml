@@ -4,8 +4,9 @@ machine:
 
 dependencies:
   override:
-    - bash scripts/build.sh
-    - bash scripts/push.sh
+#    - bash scripts/build.sh
+#    - bash scripts/push.sh
+     - echo done
 
 test:
   override:
