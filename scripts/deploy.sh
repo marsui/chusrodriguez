@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sha=$(git rev-parse --short HEAD)
+
 access_key=${AWS_ACCESS_KEY_ID:-none}
 secret_key=${AWS_SECRET_ACCESS_KEY:-none}
 region=${AWS_REGION:-eu-west-1}
@@ -32,4 +34,4 @@ mv .credentials ~/.aws/credentials
 sudo pip install awsebcli
 
 eb init -r $region -p Docker chusrodriguez-$environment-application
-eb create $environment
+eb create $environment-$sha
