@@ -24,5 +24,3 @@ variable "app-name" {
 variable "environment" {
   default = "thread"
 }
-
-variable "zone_id" {}
