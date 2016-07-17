@@ -6,7 +6,7 @@ services:
   - docker
 
 script:
-  - "bash scripts/build.sh"
-  - "bash scripts/push.sh"
-  - "bash scripts/provision.sh"
+  #- "bash scripts/build.sh"
+  #- "bash scripts/push.sh"
+  #- "bash scripts/provision.sh"
   - "bash scripts/deploy.sh"
