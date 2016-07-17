@@ -5,7 +5,7 @@ if [ ! -f vendor/terraform/terraform ]; then
 fi
 
 hosted_zone_id=${HOSTED_ZONE_ID:-none}
-environment=${ENVIRONMENT:-yarn}
+environment=${ENVIRONMENT:-thread}
 region=${AWS_REGION}
 
 # Verify environment existence
@@ -27,7 +27,3 @@ then
 
   mv $environment.tfstate $environment-app.tfstate
 fi
-
-bash scripts/components-up/dns.sh
-
-mv $environment.tfstate $environment-dns.tfstate

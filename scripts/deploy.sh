@@ -10,7 +10,7 @@ pgsql_connection=${CHUSRODRIGUEZ_PGSQL_CONNECTION_STRING:-none}
 access_key_ses=${AWS_ACCESS_KEY_ID_SES:-none}
 secret_key_ses=${AWS_SECRET_ACCESS_KEY_SES:-none}
 
-environment=${ENVIRONMENT:-yarn}
+environment=${ENVIRONMENT:-thread}
 
 mkdir -p .ebextensions
 touch .ebextensions/.config
@@ -35,3 +35,6 @@ sudo pip install awsebcli
 
 eb init -r $region -p Docker chusrodriguez-$environment-application
 eb create $environment-$sha
+
+bash scripts/components-up/dns.sh
+mv $environment.tfstate $environment-dns.tfstate
