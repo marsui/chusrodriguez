@@ -5,7 +5,7 @@ if [ ! -f vendor/terraform/terraform ]; then
 fi
 
 hosted_zone_id=${HOSTED_ZONE_ID:-none}
-environment=${ENVIRONMENT:-thimble}
+environment=${ENVIRONMENT:-yarn}
 region=${AWS_REGION}
 
 # Verify environment existence
@@ -13,7 +13,7 @@ region=${AWS_REGION}
 db_check=$(node util/rds-check.js)
 if [[ $db_check == 'false' ]]
 then
-  bash scripts/components-up/db.sh > .rds-output.txt
+  bash scripts/components-up/db.sh
 fi
 
 app_check=$(node util/beanstalk-check.js)

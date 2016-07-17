@@ -10,7 +10,7 @@ pgsql_connection=${CHUSRODRIGUEZ_PGSQL_CONNECTION_STRING:-none}
 access_key_ses=${AWS_ACCESS_KEY_ID_SES:-none}
 secret_key_ses=${AWS_SECRET_ACCESS_KEY_SES:-none}
 
-environment=${ENVIRONMENT:-thimble}
+environment=${ENVIRONMENT:-yarn}
 
 mkdir -p .ebextensions
 touch .ebextensions/.config
