@@ -13,7 +13,7 @@ region=${AWS_REGION}
 db_check=$(node util/rds-check.js)
 if [[ $db_check == 'false' ]]
 then
-  bash scripts/components-up/db.sh
+  bash scripts/components-up/db.sh > .rds-output.txt
 fi
 
 app_check=$(node util/beanstalk-check.js)
@@ -21,3 +21,5 @@ if [[ $app_check == 'false' ]]
 then
   bash scripts/components-up/app.sh
 fi
+
+bash scripts/components-up/dns.sh
