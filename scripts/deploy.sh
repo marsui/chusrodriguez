@@ -18,7 +18,7 @@ echo "    value: \"${pgsql_connection}\"" >> .ebextensions/.config
 echo "  - option_name: AWS_ACCESS_KEY_ID" >> .ebextensions/.config
 echo "    value: \"${access_key_ses}\"" >> .ebextensions/.config
 echo "  - option_name: AWS_SECRET_ACCESS_KEY" >> .ebextensions/.config
-echo "      value: \"${secret_key_ses}\"" >> .ebextensions/.config
+echo "    value: \"${secret_key_ses}\"" >> .ebextensions/.config
 
 touch .credentials
 echo "[default]" >> .credentials
