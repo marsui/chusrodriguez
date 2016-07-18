@@ -4,7 +4,7 @@ resource "aws_vpc" "main" {
   enable_dns_support = true
 
   tags {
-    Name = "${var.app-name}"
+    Name = "${var.app-name}-${var.environment}"
     Component = "database"
     Role = "persistence"
     Environment = "${var.environment}"

@@ -25,7 +25,7 @@ then
   do
     sleep 5
     echo "Attempt ${index++}"
-    cname=$($(node util/rds-endpoint.js))
+    cname=$(node util/rds-endpoint.js)
   done
 
   echo 'Inserting DDL and sample data'

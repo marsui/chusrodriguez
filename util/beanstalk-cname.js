@@ -19,8 +19,7 @@ elasticbeanstalk.describeEnvironments({
   EnvironmentNames: [environment + '-' + sha]
 }, function(err, data) {
   if (err) {
-    console.error(err, err.stack); // an error occurred
-    return;
+    console.log(err);
   }
 
   var exists = !!data.Environments.length;

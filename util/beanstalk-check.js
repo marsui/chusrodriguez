@@ -19,6 +19,7 @@ elasticbeanstalk.describeApplications({
 }, function(err, data) {
   if (err) {
     console.error(err, err.stack); // an error occurred
+    process.stdout.write('false');
     return;
   }
 

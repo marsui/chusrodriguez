@@ -17,6 +17,7 @@ var rds = new AWS.RDS();
 rds.describeDBInstances({
   DBInstanceIdentifier: 'chusrodriguez-' + environment + '-db'
 }, function(err, data) {
+  if(err) console.log(err);
 
   var exists = !err && data && data.DBInstances.length ? 'true' : 'false';
 
