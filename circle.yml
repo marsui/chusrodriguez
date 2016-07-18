@@ -4,7 +4,6 @@ machine:
 
 dependencies:
   override:
-    - export ENVIRONMENT=thread
     - bash scripts/build.sh
     - bash scripts/push.sh
     - bash scripts/provision.sh
