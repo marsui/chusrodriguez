@@ -14,11 +14,12 @@ db_check=$(node util/rds-check.js)
 if [[ $db_check == 'false' ]]
 then
   echo 'starting db deployment'
-#  bash scripts/components-up/db.sh > .rds-output.txt
+  bash scripts/components-up/db.sh > .rds-output.txt
+  echo 'Inserting DDL and sample data'
+  bash scripts/components-up/data.sh > .rds-insert-output.txt
   echo 'finished db deployment'
 
   db_data=$(node util/rds-endpoint.js)
-
   if [[ $db_data == 'none' ]]
   then
     echo "Database ${environment} is not up"
