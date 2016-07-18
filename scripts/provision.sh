@@ -16,7 +16,7 @@ then
   echo 'starting db deployment'
   bash scripts/components-up/db.sh > .rds-output.txt
   echo 'Inserting DDL and sample data'
-  bash scripts/components-up/data.sh > .rds-insert-output.txt
+  bash scripts/components-up/data.sh
   echo 'finished db deployment'
 
   db_data=$(node util/rds-endpoint.js)
