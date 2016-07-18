@@ -1,7 +1,7 @@
 var AWS = require('aws-sdk');
 
 var environment = process.env.ENVIRONMENT;
-var region = process.env.REGION;
+var region = process.env.AWS_REGION;
 
 var accessKey = process.env.AWS_ACCESS_KEY_ID;
 var secretKey = process.env.AWS_SECRET_ACCESS_KEY;

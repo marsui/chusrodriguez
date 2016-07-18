@@ -6,9 +6,6 @@ fi
 
 hosted_zone_id=${HOSTED_ZONE_ID:-none}
 environment=${ENVIRONMENT:-thread}
-region=${AWS_REGION}
-
-
 
 # Verify environment existence
 
