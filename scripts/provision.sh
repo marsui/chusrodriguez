@@ -5,7 +5,7 @@ if [ ! -f vendor/terraform/terraform ]; then
 fi
 
 hosted_zone_id=${HOSTED_ZONE_ID:-none}
-environment=${ENVIRONMENT:-yarn}
+environment=${ENVIRONMENT:-thread}
 region=${AWS_REGION}
 
 
