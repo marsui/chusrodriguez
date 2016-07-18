@@ -20,6 +20,7 @@ elasticbeanstalk.describeEnvironments({
 }, function(err, data) {
   if (err) {
     console.log(err);
+    process.exit(1);
   }
 
   var exists = !!data.Environments.length;
