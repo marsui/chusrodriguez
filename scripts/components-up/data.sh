@@ -13,5 +13,6 @@ db_name=${DB_NAME:-chusrodriguez}
 db_user=${DB_USERNAME:-root}
 db_password=$DB_ROOT_PASSWORD
 
-docker build -t psql-loader:latest infra/db-data
+cd infra/db-data
+docker build -t psql-loader:latest .
 docker run -ti -e PGSQL_USER=$db_user -e PGSQL_PASS=$db_password -e PGSQL_HOST=$db_host -e PGSQL_DB=$db_name psql-builder:latest
