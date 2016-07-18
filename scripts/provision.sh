@@ -8,6 +8,8 @@ hosted_zone_id=${HOSTED_ZONE_ID:-none}
 environment=${ENVIRONMENT:-yarn}
 region=${AWS_REGION}
 
+
+
 # Verify environment existence
 
 db_check=$(node util/rds-check.js)
@@ -18,15 +20,6 @@ then
   echo 'Inserting DDL and sample data'
   bash scripts/components-up/data.sh
   echo 'finished db deployment'
-
-  db_data=$(node util/rds-endpoint.js)
-  if [[ $db_data == 'none' ]]
-  then
-    echo "Database ${environment} is not up"
-    exit 1
-  fi
-
-
 
   mv $environment.tfstate $environment-db.tfstate
 fi
