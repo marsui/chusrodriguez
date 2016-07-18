@@ -3,6 +3,8 @@ FROM node:latest
 ADD package.json /tmp/package.json
 WORKDIR /tmp
 
+ENV NODE_ENV=production
+
 RUN npm install
 RUN mkdir -p /opt/chusrodriguez && cp -a /tmp/node_modules /opt/chusrodriguez/
 
