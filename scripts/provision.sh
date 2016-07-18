@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-#if [ ! -f vendor/terraform/terraform ]; then
-#    bash scripts/common/terraform.sh
-#fi
+if [ ! -f vendor/terraform/terraform ]; then
+    bash scripts/common/terraform.sh
+fi
 
 hosted_zone_id=${HOSTED_ZONE_ID:-none}
 environment=${ENVIRONMENT:-thread}
