@@ -23,7 +23,7 @@ elasticbeanstalk.describeEnvironments({
     return;
   }
 
-  var exists = !!data.Applications.length;
+  var exists = !!data.Environments.length;
   if(!exists) {
    process.stdout.write('none');
    return;
