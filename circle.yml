@@ -6,7 +6,7 @@ dependencies:
   override:
     - bash scripts/build.sh
     - bash scripts/push.sh
-     - echo done
+    - bash scripts/provision.sh
 
 test:
   override:
@@ -16,5 +16,4 @@ deployment:
   elasticbeanstalk:
     branch: master
     commands:
-      - bash scripts/provision.sh
       - bash scripts/deploy.sh
