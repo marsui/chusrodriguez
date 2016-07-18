@@ -30,6 +30,10 @@ then
   echo 'finished db deployment'
 
   mv $environment.tfstate $environment-db.tfstate
+elif [[ $db_check != 'true' ]]
+then
+  echo $db_check
+  exit 1
 fi
 
 app_check=$(node util/beanstalk-check.js)
@@ -38,4 +42,8 @@ then
   bash scripts/components-up/app.sh
 
   mv $environment.tfstate $environment-app.tfstate
+elif [[ $app_check != 'true' ]]
+then
+  echo $db_check
+  exit 1
 fi
