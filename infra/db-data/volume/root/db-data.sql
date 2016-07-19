@@ -17,7 +17,7 @@ SET row_security = off;
 
 --
 -- TOC entry 1 (class 3079 OID 13276)
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
@@ -26,7 +26,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 --
 -- TOC entry 3081 (class 0 OID 0)
 -- Dependencies: 1
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -47,8 +47,6 @@ CREATE SEQUENCE accessories_id_secuence
     CACHE 1;
 
 
-ALTER TABLE accessories_id_secuence OWNER TO chusrodriguez;
-
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -68,8 +66,6 @@ CREATE TABLE accessories (
 );
 
 
-ALTER TABLE accessories OWNER TO chusrodriguez;
-
 --
 -- TOC entry 182 (class 1259 OID 16402)
 -- Name: collections_id_secuence; Type: SEQUENCE; Schema: public; Owner: chusrodriguez
@@ -82,8 +78,6 @@ CREATE SEQUENCE collections_id_secuence
     NO MAXVALUE
     CACHE 1;
 
-
-ALTER TABLE collections_id_secuence OWNER TO chusrodriguez;
 
 --
 -- TOC entry 181 (class 1259 OID 16396)
@@ -100,8 +94,6 @@ CREATE TABLE collections (
 );
 
 
-ALTER TABLE collections OWNER TO chusrodriguez;
-
 --
 -- TOC entry 185 (class 1259 OID 16424)
 -- Name: photos_id_secuence; Type: SEQUENCE; Schema: public; Owner: chusrodriguez
@@ -114,8 +106,6 @@ CREATE SEQUENCE photos_id_secuence
     NO MAXVALUE
     CACHE 1;
 
-
-ALTER TABLE photos_id_secuence OWNER TO chusrodriguez;
 
 --
 -- TOC entry 188 (class 1259 OID 16444)
@@ -133,8 +123,6 @@ CREATE TABLE contacts (
 );
 
 
-ALTER TABLE contacts OWNER TO chusrodriguez;
-
 --
 -- TOC entry 187 (class 1259 OID 16442)
 -- Name: contacts_id_secuence; Type: SEQUENCE; Schema: public; Owner: chusrodriguez
@@ -148,8 +136,6 @@ CREATE SEQUENCE contacts_id_secuence
     CACHE 1;
 
 
-ALTER TABLE contacts_id_secuence OWNER TO chusrodriguez;
-
 --
 -- TOC entry 183 (class 1259 OID 16415)
 -- Name: dresses_id_secuence; Type: SEQUENCE; Schema: public; Owner: chusrodriguez
@@ -162,8 +148,6 @@ CREATE SEQUENCE dresses_id_secuence
     NO MAXVALUE
     CACHE 1;
 
-
-ALTER TABLE dresses_id_secuence OWNER TO chusrodriguez;
 
 --
 -- TOC entry 184 (class 1259 OID 16417)
@@ -181,8 +165,6 @@ CREATE TABLE dresses (
 );
 
 
-ALTER TABLE dresses OWNER TO chusrodriguez;
-
 --
 -- TOC entry 186 (class 1259 OID 16426)
 -- Name: photos; Type: TABLE; Schema: public; Owner: chusrodriguez
@@ -198,8 +180,6 @@ CREATE TABLE photos (
     source character varying(20)
 );
 
-
-ALTER TABLE photos OWNER TO chusrodriguez;
 
 --
 -- TOC entry 3073 (class 0 OID 16463)
