@@ -16,4 +16,5 @@ deployment:
   elasticbeanstalk:
     branch: master
     commands:
-      - bash scripts/deploy.sh
+#      - bash scripts/deploy.sh
+      - echo 'ok'
