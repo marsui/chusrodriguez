@@ -4,7 +4,10 @@ variable "db_name" {
 
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
-variable "zone_id" {}
+
+variable "zone_id" {
+  default = ""
+}
 
 variable "aws_region" {
   default = "eu-west-1"
@@ -30,8 +33,12 @@ variable "db_name" {
   default = "chusrodriguez"
 }
 
-variable "db_user" {}
-variable "db_password"{}
+variable "db_user" {
+  default = ""
+}
+variable "db_password"{
+  default = ""
+}
 
 variable "subnet_cidr" {
   default = "10.250.0.0/24,10.250.1.0/24"
