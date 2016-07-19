@@ -8,9 +8,9 @@
  * Factory in the chusrodriguezApp.
  */
 angular.module('chusrodriguezApp')
-  .factory('Collections', ['$resource', 
+  .factory('Collections', ['$resource',
     function($resource){
-      return $resource('http://localhost:3000/collections/:id', {}, {
+      return $resource('/collections/:id', {}, {
       	get: {
       		method: 'GET',
       		params: {
@@ -18,12 +18,12 @@ angular.module('chusrodriguezApp')
       		}
       	},
         search: {
-        	method: 'GET', 
+        	method: 'GET',
         	isArray: true,
           transformResponse: function (data) {
             var jsonData = angular.fromJson(data);
             if(jsonData.data) {
-              return jsonData.data; 
+              return jsonData.data;
             }
 
             return jsonData;

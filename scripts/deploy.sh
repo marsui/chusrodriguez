@@ -5,7 +5,7 @@ sha=$(git rev-parse --short HEAD)
 access_key=${AWS_ACCESS_KEY_ID:-none}
 secret_key=${AWS_SECRET_ACCESS_KEY:-none}
 region=${AWS_REGION:-eu-central-1}
-environment=${ENVIRONMENT:-bobina}
+environment=${ENVIRONMENT:-dedal}
 
 db_host="db-${environment}-db.tallerchusrodriguez.com"
 db_name=${DB_NAME:-chusrodriguez}
