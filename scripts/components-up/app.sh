@@ -8,7 +8,7 @@ region=${AWS_REGION:-eu-west-1}
 
 db_name=${DB_NAME:-chusrodriguez}
 db_user=${DB_USER:-root}
-db_pass=$DB_ROOT_PASSWORD
+db_password=$DB_ROOT_PASSWORD
 
 environment=${ENVIRONMENT:-thread}
 zone_id=${HOSTED_ZONE_ID:-none}
