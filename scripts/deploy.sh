@@ -39,6 +39,3 @@ sudo pip install awsebcli
 
 eb init -r $region -p Docker chusrodriguez-$environment-application
 eb create $environment-$sha
-
-bash scripts/components-up/dns.sh
-mv $environment.tfstate $environment-dns.tfstate

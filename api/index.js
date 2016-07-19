@@ -1,3 +1,6 @@
+console.log("endpoint:" + process.env.CHUSRODRIGUEZ_PGSQL_CONNECTION);
+
+
 var express = require("express");
 var app = express();
 var bodyParser = require('body-parser')
@@ -13,13 +16,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-try {
-  var massiveInstance = massive.connectSync({connectionString : connectionString})
-  app.set('db', massiveInstance);
-} catch(e) {
-  console.log("Connection failed")
-  process.stdout.write(JSON.stringify(e));
-}
+
+var massiveInstance = massive.connectSync({connectionString : connectionString})
+app.set('db', massiveInstance);
 
 app.use(express.static('dist'));
 
