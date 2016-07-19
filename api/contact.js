@@ -103,7 +103,7 @@ module.exports = function(app) {
 			var mailOptionsClient = {
 			    from: '"Contacto Chusrodriguez" <no-reply@tallerchusrodriguez.com>', // sender address
 			    replyTo: contact.email,
-			    to: 'contact.email', // list of receivers
+			    to: contact.email, // list of receivers
 			    subject: 'Hemos recibido su solicitud', // Subject line
 			    html: '<b>' + contact.name + ',</b><br/><br/>Gacias por ponerte en contacto con nosotros.<br/><br/>Hemos recibido tu mensaje y pronto nos pondremos en contacto contigo.<br/><br/>Este ha sido tu mensaje: <br/><br/>' + contact.text + '<br/><br/><br/>Un saludo, <br/>Equipo Chus Rodriguez.<br/><br/><br/><br/><br/><br/>NOTA:Este mensaje se ha generado automáticamente. Por favor, no responda a este correo.' // html body
 			};
