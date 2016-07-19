@@ -14,15 +14,15 @@ AWS.config.update({
 
 var rds = new AWS.RDS();
 
-rds.describeDBInstances({
-  DBInstanceIdentifier: 'chusrodriguez-' + environment + '-db'
-}, function(err, data) {
+rds.describeDBInstances({}, function(err, data) {
   if (err) {
     console.log(err);
     process.exit(1);
   }
 
-  var exists = !err && data && data.DBInstances.length ? 'true' : 'false';
+  var exists = !err && data && data.DBInstances.filter(function(item) {
+    return item.DBInstanceIdentifier === 'chusrodriguez-' + environment + '-db'
+  }).length > 0 ? 'true' : 'false';
 
   process.stdout.write(exists);
 
