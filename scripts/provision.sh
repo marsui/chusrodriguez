@@ -12,7 +12,9 @@ environment=${ENVIRONMENT:-thread}
 #check=$(ENVIRONMENT=$environment node util/rds-check.js)
 #if [[ $check == 'false' ]]
 #then
+  echo 'Launching infrastructure'
   bash scripts/components-up/app.sh > .terraform-output.txt
+  echo 'Infrastructure is up'
 
   echo 'Inserting DDL and sample data'
   bash scripts/components-up/data.sh
