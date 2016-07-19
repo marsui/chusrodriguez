@@ -11,16 +11,18 @@ environment=${ENVIRONMENT:-thread}
 
 check=$(node util/rds-check.js)
 echo $check
-if [[ $check == 'false' ]]
-then
-  echo 'not up'
 
-#  bash scripts/components-up/app.sh > .terraform-output.txt
-elif [[ $check != 'true' ]]
-then
-  echo $check
-  exit 1
-fi
+
+#if [[ $check == 'false' ]]
+#then
+#  echo 'not up'
+#
+##  bash scripts/components-up/app.sh > .terraform-output.txt
+#elif [[ $check != 'true' ]]
+#then
+#  echo $check
+#  exit 1
+#fi
 
 echo 'Inserting DDL and sample data'
 bash scripts/components-up/data.sh
