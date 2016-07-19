@@ -15,15 +15,9 @@ then
   echo 'starting db deployment'
   bash scripts/components-up/db.sh > .rds-output.txt
 
-  echo 'Waiting for database to be ready'
-  cname='none'
-  index=0
-  while [[ $cname == 'none' ]]
-  do
-    sleep 5
-    echo "Attempt ${index++}"
-    cname=$(node util/rds-endpoint.js)
-  done
+  cname=$(node util/rds-endpoint.js)
+  echo "database deployed at ${cname}"
+
 
   echo 'Inserting DDL and sample data'
   bash scripts/components-up/data.sh
