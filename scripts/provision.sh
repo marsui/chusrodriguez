@@ -19,11 +19,11 @@ then
   echo 'Inserting DDL and sample data'
   bash scripts/components-up/data.sh
   echo 'finished db deployment'
-elif [[ $check != 'true' ]]
+elif [[ $check == 'true' ]]
 then
+  echo 'Infrastructure already up'
+else
   echo 'There was an error fetching sdk information'
   echo $check
   exit 1
-else
-  echo 'Infrastructure already up'
 fi
