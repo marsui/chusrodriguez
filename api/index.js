@@ -17,6 +17,7 @@ try {
   var massiveInstance = massive.connectSync({connectionString : connectionString})
   app.set('db', massiveInstance);
 } catch(e) {
+  console.log("Connection failed")
   process.stdout.write(JSON.stringify(e));
 }
 

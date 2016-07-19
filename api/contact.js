@@ -1,4 +1,7 @@
 var util = require('./util');
+var nodemailer = require('nodemailer');
+var sesTransport = require('nodemailer-ses-transport');
+
 
 module.exports = function(app) {
 	app.get('/contacts', function (req, res) {
@@ -97,6 +100,14 @@ module.exports = function(app) {
 			    html: 'El usuario <b>' + contact.name + '</b> te ha escrito un mensaje:<br/><br/><br/>' + contact.text // html body
 			};
 
+			var mailOptionsClient = {
+			    from: '"Contacto Chusrodriguez" <no-reply@chusrodriguez.es>', // sender address
+			    replyTo: contact.email,
+			    to: 'contact.email', // list of receivers
+			    subject: 'Hemos recibido su solicitud', // Subject line
+			    html: '<b>' + contact.name + ',</b><br/><br/>Gacias por ponerte en contacto con nosotros.<br/><br/>Hemos recibido tu mensaje y pronto nos pondremos en contacto contigo.<br/><br/>Este ha sido tu mensaje: <br/><br/>' + contact.text + '<br/><br/><br/>Un saludo, <br/>Equipo Chus Rodriguez.<br/><br/><br/><br/><br/><br/>NOTA:Este mensaje se ha generado automáticamente. Por favor, no responda a este correo.' // html body
+			};
+
 			// send mail with defined transport object
 			transporter.sendMail(mailOptions, function(error, info){
 			    if(error){
@@ -104,7 +115,15 @@ module.exports = function(app) {
 			    }
 			    console.log('Message sent: ' + info.response);
 			});
-				
+
+
+			transporter.sendMail(mailOptionsClient, function(error, info){
+			    if(error){
+			        return console.log(error);
+			    }
+			    console.log('Message sent: ' + info.response);
+			});
+
 		});
 	});
 
@@ -156,7 +175,7 @@ module.exports = function(app) {
 
 			res.status(200).send(result);
 		});
-		
+
 	});
 
 	app.delete('/contacts/:contactId', function (req, res) {
