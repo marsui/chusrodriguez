@@ -18,17 +18,17 @@ then
   cname=$(node util/rds-endpoint.js)
   echo "database deployed at ${cname}"
 
-
-  echo 'Inserting DDL and sample data'
-  bash scripts/components-up/data.sh
-  echo 'finished db deployment'
-
-  mv $environment.tfstate $environment-db.tfstate
 elif [[ $db_check != 'true' ]]
 then
   echo $db_check
   exit 1
 fi
+
+echo 'Inserting DDL and sample data'
+bash scripts/components-up/data.sh
+echo 'finished db deployment'
+
+mv $environment.tfstate $environment-db.tfstate
 
 app_check=$(node util/beanstalk-check.js)
 if [[ $app_check == 'false' ]]
