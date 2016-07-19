@@ -10,11 +10,11 @@ variable "zone_id" {
 }
 
 variable "aws_region" {
-  default = "eu-west-1"
+  default = "eu-central-1"
 }
 
 variable "azs" {
-  default = "eu-west-1a,eu-west-1b" // ,eu-west-1b,eu-west-1c
+  default = "eu-central-1a,eu-central-1b" // ,eu-central-1b,eu-central-1c
 }
 
 variable "subnet_cidr" {
