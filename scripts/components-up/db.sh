@@ -15,7 +15,7 @@ db_password=$DB_ROOT_PASSWORD
 state_bucket=${STATE_BUCKET}
 
 
-./vendor/terraform/terraform remote config -backend s3 -backend-config="bucket=$state_bucket" -backend-config="key=db/${environment}.tfstate" -backend-config=region="${region}"
+./vendor/terraform/terraform remote config -backend s3 -backend-config="bucket=$state_bucket" -backend-config="key=db/${environment}-db.tfstate" -backend-config=region="${region}"
 ./vendor/terraform/terraform get -update=true infra/db
-./vendor/terraform/terraform apply -var aws_region=$region -var db_name=$db_name -var db_user=$db_user -var db_password=$db_password -var environment=$environment -var aws_access_key=$access_key -var aws_secret_key=$secret_key -state $environment.tfstate infra/db
+./vendor/terraform/terraform apply -var aws_region=$region -var db_name=$db_name -var db_user=$db_user -var db_password=$db_password -var environment=$environment -var aws_access_key=$access_key -var aws_secret_key=$secret_key -state $environment-db.tfstate infra/db
 
