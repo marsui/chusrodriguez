@@ -1,6 +1,6 @@
 //resource "aws_route53_record" "default" {
 //  zone_id = "${var.zone_id}"
-//  name = "chusrodriguez.es"
+//  name = "tallerchusrodriguez.com"
 //  type = "CNAME"
 //  ttl = "1"
 //  records = ["${aws_elastic_beanstalk_application.default.}"]
