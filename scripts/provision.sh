@@ -21,6 +21,9 @@ then
   echo 'finished db deployment'
 elif [[ $check != 'true' ]]
 then
+  echo 'There was an error fetching sdk information'
   echo $check
   exit 1
+else
+  echo 'Infrastructure already up'
 fi
