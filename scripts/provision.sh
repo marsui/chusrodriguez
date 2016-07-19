@@ -10,9 +10,6 @@ environment=${ENVIRONMENT:-thread}
 # Verify environment existence
 
 check=$(ENVIRONMENT=$environment node util/rds-check.js)
-echo $check
-
-
 if [[ $check == 'false' ]]
 then
   bash scripts/components-up/app.sh > .terraform-output.txt

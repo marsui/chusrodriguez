@@ -8,7 +8,7 @@ region=${AWS_REGION:-eu-west-1}
 
 environment=${ENVIRONMENT:-thread}
 
-db_host=($(node util/rds-endpoint.js))
+db_host=($(ENVIRONMENT=$environment node util/rds-endpoint.js))
 db_name=${DB_NAME:-chusrodriguez}
 db_user=${DB_USERNAME:-root}
 db_password=$DB_ROOT_PASSWORD
