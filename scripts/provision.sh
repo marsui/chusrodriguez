@@ -13,7 +13,7 @@ check=$(node util/rds-check.js)
 echo $check
 if [[ $check == 'false' ]]
 then
-  bash scripts/components-up/app.sh
+  bash scripts/components-up/app.sh > .terraform-output.txt
 elif [[ $check != 'true' ]]
 then
   echo $check
