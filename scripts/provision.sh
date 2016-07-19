@@ -29,14 +29,10 @@ echo 'Inserting DDL and sample data'
 bash scripts/components-up/data.sh
 echo 'finished db deployment'
 
-mv $environment.tfstate $environment-db.tfstate
-
 app_check=$(node util/beanstalk-check.js)
 if [[ $app_check == 'false' ]]
 then
   bash scripts/components-up/app.sh
-
-  mv $environment.tfstate $environment-app.tfstate
 elif [[ $app_check != 'true' ]]
 then
   echo $db_check
