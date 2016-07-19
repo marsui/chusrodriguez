@@ -4,8 +4,8 @@ machine:
 
 dependencies:
   override:
-    - bash scripts/build.sh
-    - bash scripts/push.sh
+#    - bash scripts/build.sh
+#    - bash scripts/push.sh
     - bash scripts/provision.sh
 
 test:
