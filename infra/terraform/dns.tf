@@ -19,5 +19,5 @@ resource "aws_route53_record" "db" {
   name = "${var.environment}-db"
   type = "CNAME"
   ttl = "1"
-  records = ["${aws_db_instance.default.endpoint}"]
+  records = ["${aws_db_instance.default.address}"]
 }
