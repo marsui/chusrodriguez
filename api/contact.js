@@ -93,7 +93,7 @@ module.exports = function(app) {
 
 	    	// setup e-mail data with unicode symbols
 			var mailOptions = {
-			    from: '"Contacto Chusrodriguez" <contacto@chusrodriguez.es>', // sender address
+			    from: '"Contacto Chusrodriguez" <contacto@tallerchusrodriguez.com>', // sender address
 			    replyTo: contact.email,
 			    to: 'marta.suarez.rgz@gmail.com', // list of receivers
 			    subject: 'Solicitud de contacto', // Subject line
@@ -101,7 +101,7 @@ module.exports = function(app) {
 			};
 
 			var mailOptionsClient = {
-			    from: '"Contacto Chusrodriguez" <no-reply@chusrodriguez.es>', // sender address
+			    from: '"Contacto Chusrodriguez" <no-reply@tallerchusrodriguez.com>', // sender address
 			    replyTo: contact.email,
 			    to: 'contact.email', // list of receivers
 			    subject: 'Hemos recibido su solicitud', // Subject line
