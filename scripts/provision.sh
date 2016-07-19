@@ -10,6 +10,7 @@ environment=${ENVIRONMENT:-thread}
 # Verify environment existence
 
 db_check=$(node util/rds-check.js)
+echo $db_check
 if [[ $db_check == 'false' ]]
 then
   echo 'starting db deployment'
