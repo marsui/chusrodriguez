@@ -21,8 +21,8 @@ rds.describeDBInstances({}, function(err, data) {
   }
 
   var exists = data.DBInstances.filter(function(item) {
-    console.log(item);
-    return item.DBInstanceIdentifier === 'chusrodriguez-' + environment + '-db'
+    console.log(item.DBInstanceIdentifier);
+    return true;
   })
 
   process.stdout.write(JSON.stringify(exists));
