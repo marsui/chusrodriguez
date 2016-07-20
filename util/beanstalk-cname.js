@@ -15,20 +15,22 @@ AWS.config.update({
 
 var elasticbeanstalk = new AWS.ElasticBeanstalk();
 
-elasticbeanstalk.describeEnvironments({
-  EnvironmentNames: [environment + '-' + sha]
-}, function(err, data) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }
+elasticbeanstalk.describeEnvironments({},
+  function(err, data) {
+    if (err) {
+      console.log(err);
+      process.exit(1);
+    }
 
-  var exists = !!data.Environments.length;
-  if(!exists) {
-   process.stdout.write('none');
-   return;
-  }
+    var exists = data && data.Environments && data.Environments.filter(function(item) {
+        return item.EnvironmentName.indexOf(environment) === 0;
+      }).length > 0;
 
-  process.stdout.write(data.Environments[0].CNAME);
+      if(!exists) {
+       process.stdout.write('none');
+       return;
+      }
 
-});
+    process.stdout.write(data.Environments[0].CNAME);
+
+  });
