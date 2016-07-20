@@ -12,4 +12,5 @@ zone_id=${HOSTED_ZONE_ID:-none}
 state_bucket=${STATE_BUCKET}
 
 ./vendor/terraform/terraform remote config -backend s3 -backend-config="bucket=$state_bucket" -backend-config="key=states/${environment}.tfstate" -backend-config=region="${region}"
+./vendor/terraform/terraform get -update=true infra/terraform
 ./vendor/terraform/terraform destroy -var aws_region=$region -var zone_id=$zone_id -var environment=$environment -var aws_access_key=$access_key -var aws_secret_key=$secret_key infra/terraform

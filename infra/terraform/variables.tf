@@ -17,7 +17,19 @@ variable "azs" {
   default = "eu-central-1a,eu-central-1b" // ,eu-central-1b,eu-central-1c
 }
 
+variable "cidr_block" {
+  default = "10.0.0.0/16"
+}
+
 variable "subnet_cidr" {
+  default = "10.0.0.0/24,10.0.1.0/24"
+}
+
+variable "db_cidr_block" {
+  default = "10.255.0.0/16"
+}
+
+variable "db_subnet_cidr" {
   default = "10.250.0.0/24,10.250.1.0/24"
 }
 

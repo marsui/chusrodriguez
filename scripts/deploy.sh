@@ -26,6 +26,7 @@ echo "    value: \"${access_key_ses}\"" >> .ebextensions/.config
 echo "  - option_name: AWS_SECRET_ACCESS_KEY" >> .ebextensions/.config
 echo "    value: \"${secret_key_ses}\"" >> .ebextensions/.config
 
+
 touch .credentials
 echo "[default]" >> .credentials
 echo "aws_access_key_id=${access_key}" >> .credentials
