@@ -16,8 +16,6 @@ app.use(function(req, res, next) {
 
 var massiveInstance = massive.connectSync({connectionString : connectionString})
 app.set('db', massiveInstance);
-process.stdout.write('endpoint:', process.env.CHUSRODRIGUEZ_PGSQL_CONNECTION);
-process.stdout.write('connected:', !!massiveInstance);
 
 app.use(express.static('dist'));
 
