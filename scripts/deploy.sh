@@ -7,7 +7,7 @@ secret_key=${AWS_SECRET_ACCESS_KEY:-none}
 region=${AWS_REGION:-eu-central-1}
 environment=${ENVIRONMENT:-dedal}
 
-db_host="db-${environment}-db.tallerchusrodriguez.com"
+db_host="${environment}-db.tallerchusrodriguez.com"
 db_name=${DB_NAME:-chusrodriguez}
 db_user=${DB_USERNAME:-chusrodriguez}
 db_password=$DB_ROOT_PASSWORD

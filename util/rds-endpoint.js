@@ -29,5 +29,5 @@ rds.describeDBInstances({}, function(err, data) {
    return;
   }
 
-  process.stdout.write(data.DBInstances[0].Endpoint.Address + ' ' + data.DBInstances[0].Endpoint.HostedZoneId);
+  process.stdout.write(data.DBInstances[0].Endpoint.Address);
 });
