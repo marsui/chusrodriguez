@@ -27,3 +27,5 @@ else
   echo $check
   exit 1
 fi
+
+bash scripts/components-up/dns.sh
