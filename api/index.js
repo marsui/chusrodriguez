@@ -1,4 +1,4 @@
-console.log("endpoint:" + process.env.CHUSRODRIGUEZ_PGSQL_CONNECTION);
+console.error("endpoint:" + process.env.CHUSRODRIGUEZ_PGSQL_CONNECTION);
 
 
 var express = require("express");
