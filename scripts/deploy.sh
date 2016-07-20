@@ -15,6 +15,7 @@ db_password=$DB_ROOT_PASSWORD
 access_key_ses=${AWS_ACCESS_KEY_ID_SES:-none}
 secret_key_ses=${AWS_SECRET_ACCESS_KEY_SES:-none}
 
+hosted_zone_id=${HOSTED_ZONE_ID:-none}
 
 mkdir -p .ebextensions
 touch .ebextensions/.config
@@ -39,3 +40,5 @@ sudo pip install awsebcli
 
 eb init -r $region -p Docker chusrodriguez-$environment-application
 eb create $environment-$sha
+
+bash scripts/components-up/dns.sh
