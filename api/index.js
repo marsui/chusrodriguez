@@ -1,6 +1,5 @@
 console.error("endpoint:" + process.env.CHUSRODRIGUEZ_PGSQL_CONNECTION);
 
-
 var express = require("express");
 var app = express();
 var bodyParser = require('body-parser')
