@@ -4,7 +4,7 @@ project_dir=$(pwd)
 
 access_key=${AWS_ACCESS_KEY_ID:-none}
 secret_key=${AWS_SECRET_ACCESS_KEY:-none}
-region=${AWS_REGION:-eu-central-1}
+region=${AWS_REGION:-us-east-1}
 
 db_name=${DB_NAME:-chusrodriguez}
 db_user=${DB_USER:-chusrodriguez}
