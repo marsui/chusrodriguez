@@ -18,7 +18,8 @@
     'ui.bootstrap',
     'gilbox.sparkScroll',
     'konga',
-    'ngFileUpload'
+    'ngFileUpload',
+    'textAngular'
     ])
    .config(function ($routeProvider) {
     $routeProvider
@@ -33,13 +34,13 @@
       controllerAs: 'collectionList'
     })
     .when('/dresses', {
-      templateUrl: 'views/dresses.html', 
+      templateUrl: 'views/dresses.html',
       controller: 'DressListCtrl',
       controllerAs: 'dressCtrl'
     })
     .when('/catalog/:source/:id', {
       templateUrl: 'views/item-detail.html',
-      controller: 'ItemDetailCtrl', 
+      controller: 'ItemDetailCtrl',
       controllerAs: 'itemDetail'
     })
     .when('/accessories', {
@@ -59,17 +60,17 @@
     })
     .when('/contact', {
       templateUrl: 'views/contact.html',
-      controller: 'ContactCtrl', 
+      controller: 'ContactCtrl',
       controllerAs: 'contact'
     })
     .when('/collection-detail/:id', {
       templateUrl: 'views/collection-detail.html',
-      controller: 'CollectionDetailCtrl', 
+      controller: 'CollectionDetailCtrl',
       controllerAs: 'collectionDetail'
     })
     .when('/admin', {
       templateUrl: 'views/admin.html',
-      controller: 'AdminCtrl', 
+      controller: 'AdminCtrl',
       controllerAs: 'adminController'
     })
     .otherwise({
@@ -79,10 +80,12 @@
 
   .run(['konga', 'metadata', function(konga, metadata, Dresses) {
     konga.config('apiEndpoint', 'http://localhost:3000');
+
     konga.viewMapper('IMAGE_FIELD', 'views/admin/konga-image-field.html');
+    konga.viewMapper('EXTENDED_TEXT_EDITOR', 'views/admin/konga-text-editor.html');
 
     konga.api('Dress', Dresses)
     konga.init(metadata);
   }]);
-   
+
 

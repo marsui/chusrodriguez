@@ -67,7 +67,12 @@ module.exports = function(app) {
 			return;
 		}
 
-		app.settings.db.collections.save(collection, function(err, result) {
+		delete collection.id;
+
+		app.settings.db.collections.insert(collection, function(err, result) {
+      if(err) {
+        res.status(503).send({error:err});
+      }
 
 			res.status(200).send(result);
 		});
@@ -121,7 +126,7 @@ module.exports = function(app) {
 
 			res.status(200).send(result);
 		});
-		
+
 	});
 
 	app.delete('/collections/:collectionId', function (req, res) {

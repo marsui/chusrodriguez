@@ -81,7 +81,7 @@ module.exports = function(app) {
 			return;
 		}
 
-		app.settings.db.contacts.save(contact, function(err, result) {
+		app.settings.db.contacts.insert(contact, function(err, result) {
 
 			res.status(200).send(result);
 

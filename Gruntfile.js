@@ -77,7 +77,7 @@ livereload: {
       },
       livereload: {
         options: {
-          open: true,
+          open: false,
           middleware: function (connect) {
             return [
 
@@ -396,6 +396,11 @@ ngtemplates: {
     }, {
       expand: true,
       cwd: 'bower_components/bootstrap/dist',
+      src: 'fonts/*',
+      dest: '<%= yeoman.dist %>'
+    }, {
+      expand: true,
+      cwd: 'bower_components/components-font-awesome',
       src: 'fonts/*',
       dest: '<%= yeoman.dist %>'
     }]

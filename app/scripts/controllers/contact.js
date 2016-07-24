@@ -1,5 +1,6 @@
 'use strict';
 
+
 /**
  * @ngdoc function
  * @name chusrodriguezApp.controller:ContactCtrl
@@ -8,7 +9,7 @@
  * Controller of the chusrodriguezApp
  */
 angular.module('chusrodriguezApp')
-  .controller('ContactCtrl', ['contact', 'common', '$filter', function (contact, common, $filter) {
+  .controller('ContactCtrl', ['contact', 'common', '$filter', '$rootScope', function (contact, common, $filter, $rootScope) {
   	this.patterns = {
   		phone: /^[9|6|7][0-9]{8}$/
     };
@@ -29,6 +30,12 @@ angular.module('chusrodriguezApp')
     }
 
     this.contact = function(){
-    	return contact.send(this.user);
+    	var result = contact.send(this.user);
+
+    	$rootScope.operations.notify("Mensaje enviado","Tu mensaje ha sido enviado con éxito");
+
+    	$rootScope.back();
+
+    	return result;
     };
   }]);

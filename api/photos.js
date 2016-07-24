@@ -88,7 +88,7 @@ module.exports = function(app) {
 			return;
 		}
 
-		app.settings.db.photos.save(photo, function(err, result) {
+		app.settings.db.photos.insert(photo, function(err, result) {
 			if (err) {
 				console.log(err);
 			}
@@ -145,7 +145,7 @@ module.exports = function(app) {
 
 			res.status(200).send(result);
 		});
-		
+
 	});
 
 	app.delete('/photos/:photoId', function (req, res) {

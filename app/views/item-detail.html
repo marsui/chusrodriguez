@@ -8,7 +8,7 @@
 	<div class="details-photo-pane">
 		<div class="details-main-photo">
 			<img ng-src="{{itemDetail.currentPhoto}}">
-			
+
 			<div class="details-side-photos">
 				<div class="details-side-photo" ng-click="itemDetail.currentPhoto = itemDetail.item.image_url" ng-class="{active: itemDetail.currentPhoto === itemDetail.item.image_url}">
 					<img ng-src="{{itemDetail.item.image_url}}">
@@ -18,19 +18,14 @@
 					<img ng-src="{{photo.image_url}}">
 				</div>
 
-				
+
 			</div>
 		</div>
-	
+
 	</div>
 	<div class="details-text-pane">
 		<h2>{{itemDetail.item.name}}</h2>
-		<ul class="details-item-bullets">
-			<li>Madera noble de Arce.</li>
-			<li>100 años de antigüedad.</li>
-			<li>Pelayo es gilipollas.</li>
-			<li>Edición limitada.</li>
-		</ul>
+		<div ng-bind-html="itemDetail.item.text"></div>
 		<div class="details-actions">
 			<button ng-click="itemDetail.requestInfo()" class="btn btn-link">
 				<i class="glyphicon glyphicon-envelope"></i>

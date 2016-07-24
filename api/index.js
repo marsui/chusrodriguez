@@ -22,10 +22,6 @@ app.use(express.static('dist'));
 app.use(bodyParser.json());
 http.createServer(app).listen(3000);
 
-app.get('/', function (req, res) {
-	res.send('It works!');
-});
-
 require('./collections')(app);
 require('./photos')(app);
 require('./dresses')(app);

@@ -48,10 +48,12 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "aws-sdk": "^2.4.6",
+    "aws-sdk": "^2.4.9",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "massive": "^2.3.0",
+    "multer": "^1.1.0",
+    "multer-s3": "^2.3.2",
     "nodemailer": "^2.4.2",
     "nodemailer-ses-transport": "^1.4.0"
   }

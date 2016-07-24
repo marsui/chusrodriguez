@@ -25,6 +25,9 @@ module.exports = function(app) {
 			if(!accessory){
 				res.status(404).send({error:'accessory with id ' + id + ' does must exists'})
 			}
+
+			accessory.collection_id = { id: accessory.collection_id };
+
 			res.status(200).send(accessory);
 		});
 
@@ -67,7 +70,13 @@ module.exports = function(app) {
 			return;
 		}
 
-		app.settings.db.accessories.save(accessory, function(err, result) {
+		accessory.collection_id = accessory.collection_id.id;
+		delete accessory.id;
+
+		app.settings.db.accessories.insert(accessory, function(err, result) {
+      if(err) {
+        res.status(503).send({error:err});
+      }
 
 			res.status(200).send(result);
 		});
@@ -117,11 +126,13 @@ module.exports = function(app) {
 			return;
 		}
 
+    accessory.collection_id = accessory.collection_id.id;
+
 		app.settings.db.accessories.update(accessory, function(err, result) {
 
 			res.status(200).send(result);
 		});
-		
+
 	});
 
 	app.delete('/accessories/:accessoryId', function (req, res) {

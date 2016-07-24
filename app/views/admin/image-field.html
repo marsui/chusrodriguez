@@ -1,11 +1,13 @@
 <div class="image-field row">
 	<div class="image-field-picture col-md-5">
-		<img ng-src="{{value.text}}">		
+		<img ng-src="{{value.text}}">
 	</div>
 	<div class="image-field-upload col-md-7">
-	<div ngf-select="upload($files)" class="drop-box"
-  ngf-drag-over-class="'dragover'" ngf-multiple="true" 
-  ngf-pattern="'image/*,application/pdf'">Drop Images or PDFs files here</div>
+    <div ng-if="ready" ngf-select="upload($files)" class="drop-box"
+    ngf-drag-over-class="'dragover'" ngf-multiple="true"
+    ngf-pattern="'image/*,application/pdf'">Drop images here</div>
+
+    <div class="uploading" ng-if="uploading">Subiendo archivo...</div>
 	</div>
 
 </div>

@@ -32,6 +32,9 @@ module.exports = function(app) {
 			if(!dress){
 				res.status(404).send({error:'dress with id ' + id + ' does must exists'})
 			}
+
+			dress.collection_id = { id: dress.collection_id };
+
 			res.status(200).send(dress);
 		});
 
@@ -69,13 +72,22 @@ module.exports = function(app) {
 			res.status(400).send({error:'image_url dress is required'});
 			return;
 		}
-		
+
 		if(dress.image_url.length > 255){
 			res.status(404).send({error:'image_url name must have less than 255 characters'});
 			return;
 		}
 
-		app.settings.db.dresses.save(dress, function(err, result) {
+		dress.collection_id = dress.collection_id.id;
+		delete dress.id;
+
+		app.settings.db.dresses.insert(dress, function(err, result) {
+		  if(err) {
+		    res.status(503).send({error:err});
+		  }
+
+		  console.log('finished');
+		  console.log(result);
 
 			res.status(200).send(result);
 		});
@@ -125,11 +137,16 @@ module.exports = function(app) {
 			return;
 		}
 
+    dress.collection_id = dress.collection_id.id;
+
 		app.settings.db.dresses.update(dress, function(err, result) {
+      if(err) {
+        res.status(503).send({error:err});
+      }
 
 			res.status(200).send(result);
 		});
-		
+
 	});
 
 	app.delete('/dresses/:dressId', function (req, res) {
