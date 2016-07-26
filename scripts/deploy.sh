@@ -29,7 +29,7 @@ echo "  - option_name: AWS_ACCESS_KEY_ID" >> .ebextensions/.config
 echo "    value: \"${access_key_ses}\"" >> .ebextensions/.config
 echo "  - option_name: AWS_SECRET_ACCESS_KEY" >> .ebextensions/.config
 echo "    value: \"${secret_key_ses}\"" >> .ebextensions/.config
-echo "  - option_name: AWS_ACCESS_KEY_ID_SE" >> .ebextensions/.config
+echo "  - option_name: AWS_ACCESS_KEY_ID_S3" >> .ebextensions/.config
 echo "    value: \"${access_key_s3}\"" >> .ebextensions/.config
 echo "  - option_name: AWS_SECRET_ACCESS_KEY_S3" >> .ebextensions/.config
 echo "    value: \"${secret_key_s3}\"" >> .ebextensions/.config
@@ -50,5 +50,3 @@ sudo pip install awsebcli
 
 eb init -r $region -p Docker chusrodriguez-$environment-application
 eb create $environment-$sha
-
-bash scripts/components-up/dns.sh
