@@ -78,7 +78,6 @@ public class Dress {
     @ShowInUpdate(configuration = @Raw(key= "CUSTOM_FIELD_TYPE", value = "IMAGE_FIELD"))
     @FieldType(update = FieldTypes.CUSTOM, results=FieldTypes.IMAGE)
     @FieldSet("Datos")
-    @Multiplicity(Multiplicities.MANY)
     private String photos;
 
     @Field
