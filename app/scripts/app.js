@@ -79,7 +79,7 @@
   })
 
   .run(['konga', 'metadata', function(konga, metadata, Dresses) {
-    konga.config('apiEndpoint', 'http://localhost:3000');
+    konga.config('apiEndpoint', '/');
 
     konga.viewMapper('IMAGE_FIELD', 'views/admin/konga-image-field.html');
     konga.viewMapper('EXTENDED_TEXT_EDITOR', 'views/admin/konga-text-editor.html');
