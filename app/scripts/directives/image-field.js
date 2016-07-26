@@ -13,12 +13,26 @@ angular.module('chusrodriguezApp')
       restrict: 'E',
       replace: true,
       link: function postLink(scope, element, attrs) {
-        if(!scope.value.text) {
-          scope.value.text = '';
-          scope.images = [];
+
+        function init() {
+          if(!scope.value.text) {
+            scope.value.text = '';
+            scope.images = [];
+          }
+          else {
+            scope.images = scope.value.text.split(',');
+          }
+        }
+
+        if(scope.entity.$resolved === false) {
+          scope.$watch('entity.$resolved', function(newVal) {
+            if(newVal) {
+              init();
+            }
+          })
         }
         else {
-          scope.images = scope.value.text.split(',');
+          init()
         }
 
         scope.ready = true;
