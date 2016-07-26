@@ -1,6 +1,14 @@
 var util = require('./util');
 
 module.exports = function(app) {
+  var that = this;
+
+  this.savePhoto = function(photo, callback) {
+    app.settings.db.photos.insert(photo, function(err, result) {
+      callback(err, result);
+    });
+  };
+
 	app.get('/photos', function (req, res) {
 		var query = util.dbQuery(req.query || {});
 
@@ -88,13 +96,7 @@ module.exports = function(app) {
 			return;
 		}
 
-		app.settings.db.photos.insert(photo, function(err, result) {
-			if (err) {
-				console.log(err);
-			}
-
-			res.status(200).send(result);
-		});
+		that.savePhoto(photo);
 	});
 
 	app.put('/photos/:photoId', function (req, res) {

@@ -19,7 +19,8 @@ SET default_tablespace = '';SET default_with_oids = false;CREATE TABLE accessori
     time_created date DEFAULT now(),
     text text,
     image_url character varying(255),
-    collection_id integer
+    collection_id integer,
+    photos text
 );
 CREATE SEQUENCE collections_id_secuence
     START WITH 1
@@ -69,7 +70,8 @@ CREATE TABLE dresses (
     time_created date DEFAULT now(),
     text text,
     image_url character varying(255),
-    collection_id integer
+    collection_id integer,
+    photos text
 );
 CREATE TABLE photos (
     id integer DEFAULT nextval('photos_id_secuence'::regclass) NOT NULL,

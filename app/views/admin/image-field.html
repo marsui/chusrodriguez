@@ -1,13 +1,30 @@
 <div class="image-field row">
-	<div class="image-field-picture col-md-5">
-		<img ng-src="{{value.text}}">
-	</div>
-	<div class="image-field-upload col-md-7">
-    <div ng-if="ready" ngf-select="upload($files)" class="drop-box"
-    ngf-drag-over-class="'dragover'" ngf-multiple="true"
-    ngf-pattern="'image/*,application/pdf'">Drop images here</div>
+	<div class="image-field-upload col-md-12">
+    <div class="drop-box">
 
-    <div class="uploading" ng-if="uploading">Subiendo archivo...</div>
-	</div>
+      <div ng-repeat="photo in images" class="image" title="click to remove" ng-click="setSelectedPicture(photo)" ng-class="{ default: photo === entity.image_url, selected: photo === selectedPicture }">
+        <img ng-src="{{ photo }}" height="100">
+      </div>
 
+    </div>
+
+    <div ngf-select="upload($files);$files=null" class="btn btn-default"
+     ngf-drag-over-class="'dragover'" ngf-multiple="false"
+     ngf-pattern="'image/*,application/pdf'">
+      <i class="fa fa-camera"></i>
+      Subir foto
+    </div>
+
+    <div class="photos-actions pull-right">
+      <button class="btn btn-primary" ng-click="setDefaultPicture()" title="Hacer foto principal" ng-disabled="!selectedPicture">
+        <i class="fa fa-check"></i>
+        <span class="text">Hacer principal</span>
+      </button>
+
+      <button class="btn btn-danger" ng-click="deleteSelectedPicture()" title="Eliminar foto" ng-disabled="!selectedPicture">
+        <i class="fa fa-remove"></i>
+        <span class="text">Eliminar elemento</span>
+      </button>
+    </div>
+  </div>
 </div>

@@ -10,7 +10,7 @@ db_name=${DB_NAME:-chusrodriguez}
 db_user=${DB_USER:-chusrodriguez}
 db_password=$DB_ROOT_PASSWORD
 
-environment=${ENVIRONMENT:-dedal}
+environment=${ENVIRONMENT:-ovillo}
 zone_id=${HOSTED_ZONE_ID:-none}
 
 state_bucket=${STATE_BUCKET}

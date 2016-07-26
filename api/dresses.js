@@ -86,9 +86,6 @@ module.exports = function(app) {
 		    res.status(503).send({error:err});
 		  }
 
-		  console.log('finished');
-		  console.log(result);
-
 			res.status(200).send(result);
 		});
 	});
