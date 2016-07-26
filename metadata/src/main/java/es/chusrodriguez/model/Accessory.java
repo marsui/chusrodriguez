@@ -60,9 +60,16 @@ public class Accessory {
     @Editable
     @Required
     @ShowInResults
+    @FieldType(FieldTypes.IMAGE)
+    private String image_url;
+
+    @Field
+    @Label("Fotos")
+    @Editable
     @ShowInUpdate(configuration = @Raw(key= "CUSTOM_FIELD_TYPE", value = "IMAGE_FIELD"))
     @FieldType(update = FieldTypes.CUSTOM, results=FieldTypes.IMAGE)
-    private String image_url;
+    @FieldSet("Datos")
+    private String photos;
 
     @Field
     @Label("Colección")
