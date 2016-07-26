@@ -34,7 +34,7 @@ echo "    value: \"${access_key_s3}\"" >> .ebextensions/.config
 echo "  - option_name: AWS_SECRET_ACCESS_KEY_S3" >> .ebextensions/.config
 echo "    value: \"${secret_key_s3}\"" >> .ebextensions/.config
 echo "  - option_name: IMAGES_BUCKET" >> .ebextensions/.config
-echo "    value: \"${secret_key_s3}\"" >> .ebextensions/.config
+echo "    value: \"${images_bucket}\"" >> .ebextensions/.config
 
 
 touch .credentials
