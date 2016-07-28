@@ -13,9 +13,9 @@
 				<div class="details-side-photo" ng-click="itemDetail.currentPhoto = itemDetail.item.image_url" ng-class="{active: itemDetail.currentPhoto === itemDetail.item.image_url}">
 					<img ng-src="{{itemDetail.item.image_url}}">
 				</div>
-				<div class="details-side-photo" ng-repeat="photo in itemDetail.photos"
-				 ng-click="itemDetail.currentPhoto = photo.image_url" ng-class="{active: itemDetail.currentPhoto === photo.image_url}">
-					<img ng-src="{{photo.image_url}}">
+				<div class="details-side-photo" ng-repeat="photo in itemDetail.item.photos"
+				 ng-click="itemDetail.currentPhoto = photo" ng-class="{active: itemDetail.currentPhoto === photo}">
+					<img ng-src="{{photo}}">
 				</div>
 
 

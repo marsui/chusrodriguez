@@ -15,6 +15,15 @@ angular.module('chusrodriguezApp')
           method: 'GET',
           params: {
             id: '@id'
+          },
+          transformResponse: function (data) {
+            var jsonData = angular.fromJson(data);
+
+            if(jsonData) {
+              jsonData.photos = jsonData.photos.split(',');
+            }
+
+            return jsonData;
           }
         },
         search: {
